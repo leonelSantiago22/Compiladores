@@ -1,0 +1,15 @@
+%{
+#include <stdio.h>
+int d=0;
+int g=0;
+%}
+%%
+\n  {d++;}
+. {g++;}
+%%
+int main()
+{
+yylex();
+printf("%d, %d",d,g);
+return 0;
+}
