@@ -1,0 +1,41 @@
+< key, int >
+< key, main >
+< (, - >
+< ), - >
+< {, - >
+< key, printf >
+< (, - >
+< ", - >
+< id, Hola >
+< id, mundo >
+< ", - >
+< ), - >
+< ;, - >
+< key, int >
+< id, a >
+< ,, - >
+< id, b >
+< ,, - >
+< id, c >
+< ;, - >
+< id, c >
+< +, - >
+< id, d >
+< assign_op, = >
+< id, b >
+< ;, - >
+en la linea 6 hay un error 
+< }, - >
+< //, - >
+< //, - >
+numero de lineas es : 9
+Numero de caracteres: 79
+Hola 1
+a 1
+b 2
+c 2
+d 1
+int 2
+main 1
+mundo 1
+printf 1
