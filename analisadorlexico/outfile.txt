@@ -1,35 +1,38 @@
-< key, int >
-< key, main >
-< (, - >
-< ), - >
-< {, - >
-< key, printf >
-< (, - >
-< ", - >
-< id, Hola >
-< id, mundo >
-< ", - >
-< ), - >
-< ;, - >
-< key, int >
-< id, a >
-< ,, - >
-< id, b >
-< ,, - >
-< id, c >
-< ;, - >
-< id, c >
-< +, - >
-< id, d >
-< assign_op, = >
-< id, b >
-< ;, - >
-en la linea 6 hay un error 
-< }, - >
-< //, - >
-< //, - >
-numero de lineas es : 9
-Numero de caracteres: 79
+< key, int >1
+< key, main >1
+en la linea 1 hay un error 
+en la linea 1 hay un error 
+< {, - >2
+< key, printf >3
+en la linea 3 hay un error 
+< ", - >3
+< id, Hola >3
+< id, mundo >3
+< ", - >3
+en la linea 3 hay un error 
+< ;, - >3
+< key, int >4
+< id, a >4
+< ,, - >4
+< id, b >4
+< ,, - >4
+< id, c >4
+< ;, - >4
+< id, c >5
+< +, - >5
+< id, d >5
+< assign_op, = >5
+< id, b >5
+< ;, - >5
+< key, while >6
+< ;, - >6
+< }, - >8
+< /, - >9
+< /, - >9
+< /, - >10
+< /, - >10
+numero de lineas es : 10
+Numero de caracteres: 107
 Hola 1
 a 1
 b 2
@@ -39,3 +42,4 @@ int 2
 main 1
 mundo 1
 printf 1
+while 1

@@ -32,7 +32,8 @@ map<string,int> word_num; //Número de palabras
 const char* FILE_NAME="./infile.txt";
 char strBuffer[1026]; // Búfer de cadenas
 string token;
-
+const string operadores_relacionales[] = {">", "<", ">=", "<=", "=", "<>"};
+const string operadores_aritmeticos[] = {"+", "-", "*", "/", "%", "^"};
 int line_num=0; // El número de líneas del programa a contar, que representa el número de línea actual, que se utiliza para localizar la ubicación del error.
 int char_num=0; // Cuente el número real de caracteres que no son espacios ni comentarios
 int state=0; // El estado actual del programa
@@ -41,30 +42,30 @@ char getChar(char* &str) // Obtener el carácter en la posición actual del punt
 {
     return *str++;
 }
-
-bool isDigit(char c)
+//verificamos si la entrada es digito
+bool esunDigito(char c)
 {
     return (c>='0' && c<='9');
 }
-
-bool isLetter(char c)
+//es una letra
+bool esunaLetra(char c)
 {
     return (c>='a'&&c<='z') || (c>='A'&& c<='Z');
 }
 
-bool isPunctuation(char c) // Determinar si es un signo de puntuación
+bool operadorAritmetico(char c) // Determinar si es un signo de puntuación
 {
-    return c=='+' || c=='-' || c=='*' || c=='(' || c==')' || c=='{'
-    || c=='}' || c=='[' || c==']'|| c==';' || c==':' || c=='#' || c=='"' || c==',';
+    return c=='+' || c=='-' || c=='*' || c=='/' || c=='%' || c=='{' || c=='}'|| c==';' || c==':' || c=='#' || c=='"' || c==',';
 }
-
-bool isKey(string str)
+//es una palabra clave
+bool palabraReservada(string str)
 {
     for(int i=0;i<KEY_NUM;i++)
         if( str==KEY_SET[i] )
             return true;
     return false;
 }
+
 
 void error()
 {
@@ -76,6 +77,7 @@ void process_string(char* buf) // El contenido de una línea de cadena
     if(state != 7) // el estado es 8, lo que significa que es un bloque de comentarios
         state = 0;
     char C=' ';
+    //printf("%d\n",line_num );
     int pos=0;
     C = getChar(buf); // Leer un personaje de pero
     while( C!='\n' && C!='\0' ) // No es un carácter de nueva línea, no es un terminador
@@ -83,22 +85,24 @@ void process_string(char* buf) // El contenido de una línea de cadena
         char_num++; // Cuenta el número de caracteres
         switch(state){ // Analizar el estado actual
             case 0: // En el estado de lectura de cadena en nombre de, no ha ingresado ningún autómata
-                if( isLetter(C) || C=='_' )
+                if( esunaLetra(C) || C=='_' )
                 {
                     state = 1; // Ingrese el estado 1
                     token = C;
                     C = getChar(buf);
                 }
-                else if( isDigit(C) )
+                else if( esunDigito(C) )
                 {
                     state = 2;
                     token = C;
                     C = getChar(buf);
                 }
-                else if( isPunctuation(C) )
+                else if( operadorAritmetico(C) )
                 {
                     state = 0;
-                    printf("< %c, - >\n",C);
+                    printf("< %c, - >",C);
+                    printf("%d\n",line_num );
+
                     C = getChar(buf);
                 }
                 else if( C==' ' ) //Espacio
@@ -155,7 +159,7 @@ void process_string(char* buf) // El contenido de una línea de cadena
                 }
                 break;
             case 1:
-                if( isLetter(C) || C=='_' || isdigit(C) )
+                if( esunaLetra(C) || C=='_' || esunDigito(C) )
                 {
                     state=1;
                     token += C;
@@ -163,20 +167,24 @@ void process_string(char* buf) // El contenido de una línea de cadena
                 }
                 else{ // Al separador
                     word_num[token]++; // Cuenta el número total de cada personaje
-                    if( isKey(token) )
+                    if( palabraReservada(token) )
                     {
-                        cout<<"< key, "<<token<<" >"<<endl;
+                        cout<<"< key, "<<token<<" >";
+                        printf("%d\n",line_num );
+
                     }
                     else
                     {
-                        cout<<"< id, "<<token<<" >"<<endl;
+                        cout<<"< id, "<<token<<" >";
+                        printf("%d\n",line_num );
+
                     }
 
                     state = 0;
                 }
                 break;
             case 2: // Entero sin signo
-                if( isDigit(C) )
+                if( esunDigito(C) )
                 {
                     state = 2;
                     token += C;
@@ -185,7 +193,9 @@ void process_string(char* buf) // El contenido de una línea de cadena
                 else
                 {
                     int num=stoi(token); // La cadena se convierte a int
-                    cout<<"< num, "<<num<<" >"<<endl;
+                    cout<<"< num, "<<num<<" >";
+                    printf("%d\n",line_num );
+
                     state = 0;
                 }
                 break;
@@ -193,39 +203,51 @@ void process_string(char* buf) // El contenido de una línea de cadena
                 if(C=='=')
                 {
                     state = 0;
-                    cout<<"< relop, <= >"<<endl;
+                    cout<<"< relop, <= >";
+                    printf("%d\n",line_num );
+
                     C = getChar(buf);
                 }
                 else
                 {
                     state = 0;
-                    cout<<"< relop, < > "<<endl;
+                    cout<<"< relop, < > ";
+                    printf("%d\n",line_num );
+
                 }
                 break;
             case 4:
                 if(C=='=')
                 {
                     state = 0;
-                    cout<<"< relop, >= >"<<endl;
+                    cout<<"< relop, >= >";
+                    printf("%d\n",line_num );
+
                     C = getChar(buf);
                 }
                 else
                 {
                     state = 0;
-                    cout<<"< relop, > >"<<endl;
+                    cout<<"< relop, > >";
+                    printf("%d\n",line_num );
+
                 }
                 break;
             case 5:
                 if(C=='=')
                 {
                     state = 0;
-                    cout<<"< relop, == >"<<endl;
+                    cout<<"< relop, == >";
+                    printf("%d\n",line_num );
+
                     C = getChar(buf);
                 }
                 else
                 {
                     state = 0;
-                    cout<<"< assign_op, = >"<<endl;
+                    cout<<"< assign_op, = >";
+                    printf("%d\n",line_num );
+
                 }
                 break;
             case 6:
@@ -239,13 +261,17 @@ void process_string(char* buf) // El contenido de una línea de cadena
                 {
                     state = 9;
                     token += C;
-                    // Comenta esta línea de código, ignora el resto
-                    cout<<"< //, - >"<<endl;
+                    //deteccion de los comentarios
+                    cout<<"< //, - >";
+                    printf("%d\n",line_num );
+
                     return;
                 }
                 else{ // Se puede juzgar como el signo de división
                     state = 0;
-                    cout<<"< /, - >"<<endl;
+                    cout<<"< /, - >";
+                    printf("%d\n",line_num );
+
                 }
                 break;
             case 7:
@@ -283,32 +309,42 @@ void process_string(char* buf) // El contenido de una línea de cadena
             case 10:
                 if(C=='=')
                 {
-                    cout<<"< relop, != >"<<endl;
+                    cout<<"< relop, != >";
+                    printf("%d\n",line_num );
+
                     state = 0;
                     C=getChar(buf);
                 }
                 else
                 {
-                    cout<<"< !, - > "<<endl;
+                    cout<<"< !, - > ";
+                    printf("%d\n",line_num );
+
                     state = 0;
                 }
                 break;
             case 11:
                 if(C=='&')
                 {
-                    cout<<"< &&, - >"<<endl;
+                    cout<<"< &&, - >";
+                    printf("%d\n",line_num );
+
                     state = 0;
                     C=getChar(buf);
                 }
                 else{
-                    cout<<"< &, - >"<<endl;
+                    cout<<"< &, - >";
+                    printf("%d\n",line_num );
+
                     state=0;
                 }
                 break;
             case 12:
                 if(C=='|')
                 {
-                    cout<<"< ||, - >"<<endl;
+                    cout<<"< ||, - >";
+                    printf("%d\n",line_num );
+
                     state=0;
                     C = getChar(buf);
                 }

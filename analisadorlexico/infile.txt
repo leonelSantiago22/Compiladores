@@ -3,6 +3,7 @@ int main()
   printf("Hola mundo");
   int a,b,c;
   c + d = b;
-  @
+  while;
+  
 }
 //comentario
