@@ -1,0 +1,6 @@
+#include <studio.>
+
+int main()
+{
+
+}

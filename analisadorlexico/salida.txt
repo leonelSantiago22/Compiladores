@@ -1,0 +1,1376 @@
+'
+' es un identidicador valido
+error en la cadena 1
+error en la cadena 2
+error en la cadena 2
+error en la cadena 2
+error en la cadena 2
+error en la cadena 2
+error en la cadena 2
+error en la cadena 2
+'#include' es un identidicador valido
+'<' Es un operador 
+error en la cadena 2
+error en la cadena 2
+error en la cadena 2
+error en la cadena 2
+error en la cadena 2
+error en la cadena 2
+'stdio.h' es un identidicador valido
+'>' Es un operador 
+'
+' es un identidicador valido
+error en la cadena 2
+error en la cadena 3
+error en la cadena 3
+error en la cadena 3
+error en la cadena 3
+error en la cadena 3
+error en la cadena 3
+error en la cadena 3
+'//inicio' es un identidicador valido
+error en la cadena 3
+error en la cadena 3
+'del' es un identidicador valido
+error en la cadena 3
+error en la cadena 3
+error en la cadena 3
+error en la cadena 3
+error en la cadena 3
+error en la cadena 3
+error en la cadena 3
+error en la cadena 3
+'programa
+' es un identidicador valido
+error en la cadena 3
+error en la cadena 4
+error en la cadena 4
+'int' 	 una plabra reservada 4 
+error en la cadena 4
+error en la cadena 4
+error en la cadena 4
+'main' es un identidicador valido
+'
+' es un identidicador valido
+'' es un identidicador valido
+'
+' es un identidicador valido
+'' es un identidicador valido
+error en la cadena 6
+error en la cadena 6
+error en la cadena 6
+error en la cadena 6
+'//int' es un identidicador valido
+'c' es un identidicador valido
+'*' Es un operador 
+error en la cadena 6
+'b
+' es un identidicador valido
+error en la cadena 6
+error en la cadena 7
+error en la cadena 7
+error en la cadena 7
+error en la cadena 7
+error en la cadena 7
+error en la cadena 7
+error en la cadena 7
+'//inicio' es un identidicador valido
+error en la cadena 7
+error en la cadena 7
+'del' es un identidicador valido
+error en la cadena 7
+error en la cadena 7
+error en la cadena 7
+error en la cadena 7
+'main
+' es un identidicador valido
+error en la cadena 7
+error en la cadena 8
+error en la cadena 8
+'int' 	 una plabra reservada 8 
+'a' es un identidicador valido
+'b' es un identidicador valido
+'c' es un identidicador valido
+'
+' es un identidicador valido
+'' es un identidicador valido
+'i' es un identidicador valido
+'=' Es un operador 
+'0' Es un entero 
+'
+' es un identidicador valido
+error en la cadena 9
+error en la cadena 10
+error en la cadena 10
+error en la cadena 10
+error en la cadena 10
+'while' 	 una plabra reservada 10 
+'i' es un identidicador valido
+'<' Es un operador 
+'=' Es un operador 
+'0' Es un entero 
+'
+' es un identidicador valido
+error en la cadena 10
+'
+' es un identidicador valido
+error en la cadena 11
+'a' es un identidicador valido
+'+' Es un operador 
+'b' es un identidicador valido
+'=' Es un operador 
+'c' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 12
+'
+' es un identidicador valido
+'' es un identidicador valido
+error en la cadena 14
+error en la cadena 14
+error en la cadena 14
+'char' 	 una plabra reservada 14 
+error en la cadena 14
+error en la cadena 14
+error en la cadena 14
+error en la cadena 14
+error en la cadena 14
+'cadena' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 14
+error en la cadena 15
+error en la cadena 15
+'for' es un identidicador valido
+error en la cadena 15
+error en la cadena 15
+'int' 	 una plabra reservada 15 
+'i' es un identidicador valido
+'=' Es un operador 
+'0' Es un entero 
+'i' es un identidicador valido
+'>' Es un operador 
+'=' Es un operador 
+error en la cadena 15
+'10' Es un entero 
+'i' es un identidicador valido
+'+' Es un operador 
+'+' Es un operador 
+'
+' es un identidicador valido
+error en la cadena 15
+'
+' es un identidicador valido
+'' es un identidicador valido
+error en la cadena 17
+error en la cadena 17
+error en la cadena 17
+error en la cadena 17
+error en la cadena 17
+'printf' es un identidicador valido
+error en la cadena 17
+error en la cadena 17
+error en la cadena 17
+error en la cadena 17
+error en la cadena 17
+'cadena' es un identidicador valido
+'
+' es un identidicador valido
+'' es un identidicador valido
+'
+' es un identidicador valido
+'' es un identidicador valido
+error en la cadena 19
+error en la cadena 19
+'do
+' es un identidicador valido
+error en la cadena 19
+'
+' es un identidicador valido
+error en la cadena 20
+'a' es un identidicador valido
+'+' Es un operador 
+'+' Es un operador 
+'
+' es un identidicador valido
+error en la cadena 21
+'b' es un identidicador valido
+'=' Es un operador 
+'a' es un identidicador valido
+'
+' es un identidicador valido
+'' es un identidicador valido
+error en la cadena 23
+error en la cadena 23
+error en la cadena 23
+error en la cadena 23
+'while' 	 una plabra reservada 23 
+'c' es un identidicador valido
+'<' Es un operador 
+'0' Es un entero 
+'
+' es un identidicador valido
+error en la cadena 23
+error en la cadena 24
+'if' 	 una plabra reservada 24 
+'a' es un identidicador valido
+'>' Es un operador 
+'=' Es un operador 
+'b' es un identidicador valido
+error en la cadena 24
+'&&' es un identidicador valido
+'c' es un identidicador valido
+'<' Es un operador 
+'=' Es un operador 
+'d' es un identidicador valido
+'
+' es un identidicador valido
+'' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 25
+error en la cadena 26
+error en la cadena 26
+error en la cadena 26
+error en la cadena 26
+error en la cadena 26
+'printf' es un identidicador valido
+'a' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 26
+error en la cadena 27
+error en la cadena 27
+error en la cadena 27
+'else' 	 una plabra reservada 27 
+'
+' es un identidicador valido
+'' es un identidicador valido
+error en la cadena 28
+error en la cadena 28
+error en la cadena 28
+error en la cadena 28
+error en la cadena 28
+'printf' es un identidicador valido
+'a' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 28
+'
+' es un identidicador valido
+error en la cadena 29
+'
+' es un identidicador valido
+'' es un identidicador valido
+error en la cadena 31
+error en la cadena 31
+error en la cadena 31
+error en la cadena 31
+error en la cadena 31
+'return' 	 una plabra reservada 31 
+'0' Es un entero 
+'
+' es un identidicador valido
+'' es un identidicador valido
+error en la cadena 32
+error en la cadena 32
+error en la cadena 32
+error en la cadena 32
+error en la cadena 32
+'switch' 	 una plabra reservada 32 
+'a' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 32
+error en la cadena 33
+error en la cadena 33
+error en la cadena 33
+'case' 	 una plabra reservada 33 
+error en la cadena 33
+'0:' no es un identidicador
+error en la cadena 33
+error en la cadena 33
+error en la cadena 33
+error en la cadena 33
+'break' 	 una plabra reservada 33 
+'
+' es un identidicador valido
+'' es un identidicador valido
+error en la cadena 34
+error en la cadena 34
+error en la cadena 34
+'case' 	 una plabra reservada 34 
+error en la cadena 34
+'1:' no es un identidicador
+error en la cadena 34
+error en la cadena 34
+'int' 	 una plabra reservada 34 
+error en la cadena 34
+error en la cadena 34
+error en la cadena 34
+error en la cadena 34
+error en la cadena 34
+error en la cadena 34
+error en la cadena 34
+'tipo_int' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 34
+'
+' es un identidicador valido
+error en la cadena 35
+'
+' es un identidicador valido
+'' es un identidicador valido
+error en la cadena 37
+error en la cadena 37
+error en la cadena 37
+error en la cadena 37
+error en la cadena 37
+'string' es un identidicador valido
+error en la cadena 37
+error en la cadena 37
+error en la cadena 37
+error en la cadena 37
+error en la cadena 37
+error en la cadena 37
+error en la cadena 37
+error en la cadena 37
+error en la cadena 37
+error en la cadena 37
+error en la cadena 37
+error en la cadena 37
+error en la cadena 37
+error en la cadena 37
+error en la cadena 37
+'ejemplodepalabra' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 37
+error en la cadena 38
+'if' 	 una plabra reservada 38 
+error en la cadena 38
+error en la cadena 38
+error en la cadena 38
+error en la cadena 38
+error en la cadena 38
+error en la cadena 38
+error en la cadena 38
+error en la cadena 38
+error en la cadena 38
+error en la cadena 38
+error en la cadena 38
+error en la cadena 38
+error en la cadena 38
+error en la cadena 38
+error en la cadena 38
+'ejemplodepalabra' es un identidicador valido
+'<' Es un operador 
+'>' Es un operador 
+error en la cadena 38
+error en la cadena 38
+error en la cadena 38
+error en la cadena 38
+error en la cadena 38
+error en la cadena 38
+error en la cadena 38
+'tipo_int' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 38
+'
+' es un identidicador valido
+error en la cadena 39
+error en la cadena 40
+error en la cadena 40
+error en la cadena 40
+error en la cadena 40
+error en la cadena 40
+error en la cadena 40
+error en la cadena 40
+error en la cadena 40
+error en la cadena 40
+error en la cadena 40
+error en la cadena 40
+error en la cadena 40
+error en la cadena 40
+'ejemplodeclase' es un identidicador valido
+'a' es un identidicador valido
+'
+' es un identidicador valido
+'' es un identidicador valido
+error en la cadena 41
+error en la cadena 41
+error en la cadena 41
+'else' 	 una plabra reservada 41 
+error en la cadena 41
+'if' 	 una plabra reservada 41 
+'
+' es un identidicador valido
+error en la cadena 41
+error en la cadena 42
+error en la cadena 42
+error en la cadena 42
+error en la cadena 42
+error en la cadena 42
+error en la cadena 42
+error en la cadena 42
+error en la cadena 42
+error en la cadena 42
+error en la cadena 42
+error en la cadena 42
+error en la cadena 42
+error en la cadena 42
+error en la cadena 42
+error en la cadena 42
+error en la cadena 42
+error en la cadena 42
+error en la cadena 42
+error en la cadena 42
+'ejemplodeclaseentera' es un identidicador valido
+'a' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 42
+'
+' es un identidicador valido
+error en la cadena 43
+'
+' es un identidicador valido
+'' es un identidicador valido
+error en la cadena 45
+error en la cadena 45
+'int' 	 una plabra reservada 45 
+'a' es un identidicador valido
+'=' Es un operador 
+'1' Es un entero 
+'b' es un identidicador valido
+'=' Es un operador 
+'2' Es un entero 
+'c' es un identidicador valido
+'d' es un identidicador valido
+error en la cadena 45
+error en la cadena 45
+error en la cadena 45
+'cont' es un identidicador valido
+'=' Es un operador 
+'0' Es un entero 
+'
+' es un identidicador valido
+error en la cadena 45
+error en la cadena 46
+error en la cadena 46
+error en la cadena 46
+error en la cadena 46
+error en la cadena 46
+error en la cadena 46
+'	double' es un identidicador valido
+'e' es un identidicador valido
+'f' es un identidicador valido
+'
+' es un identidicador valido
+'' es un identidicador valido
+error en la cadena 47
+error en la cadena 47
+error en la cadena 47
+error en la cadena 47
+error en la cadena 47
+error en la cadena 47
+error en la cadena 47
+'//inicio' es un identidicador valido
+error en la cadena 47
+'de' es un identidicador valido
+error en la cadena 47
+error en la cadena 47
+error en la cadena 47
+error en la cadena 47
+error en la cadena 47
+error en la cadena 47
+error en la cadena 47
+'creacion' es un identidicador valido
+error en la cadena 47
+'de' es un identidicador valido
+error en la cadena 47
+'lo' es un identidicador valido
+error en la cadena 47
+error en la cadena 47
+error en la cadena 47
+error en la cadena 47
+error en la cadena 47
+error en la cadena 47
+error en la cadena 47
+error en la cadena 47
+error en la cadena 47
+'Fibonacci
+' es un identidicador valido
+error en la cadena 47
+error en la cadena 48
+error en la cadena 48
+error en la cadena 48
+error en la cadena 48
+error en la cadena 48
+error en la cadena 48
+error en la cadena 48
+error en la cadena 48
+'	//printf' es un identidicador valido
+error en la cadena 48
+error en la cadena 48
+error en la cadena 48
+error en la cadena 48
+error en la cadena 48
+error en la cadena 48
+error en la cadena 48
+error en la cadena 48
+error en la cadena 48
+'"Fibonacci' es un identidicador valido
+error en la cadena 48
+error en la cadena 48
+error en la cadena 48
+'fino' es un identidicador valido
+error en la cadena 48
+'a:' es un identidicador valido
+'"' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 48
+error en la cadena 49
+error en la cadena 49
+error en la cadena 49
+error en la cadena 49
+error en la cadena 49
+error en la cadena 49
+error en la cadena 49
+'	//scanf' es un identidicador valido
+error en la cadena 49
+error en la cadena 49
+error en la cadena 49
+error en la cadena 49
+'"%ld"' es un identidicador valido
+error en la cadena 49
+'&c' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 49
+'
+' es un identidicador valido
+error en la cadena 50
+error en la cadena 51
+error en la cadena 51
+error en la cadena 51
+error en la cadena 51
+error en la cadena 51
+'	while' es un identidicador valido
+'b' es un identidicador valido
+'<' Es un operador 
+'c' es un identidicador valido
+'
+' es un identidicador valido
+'' es un identidicador valido
+'	' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 52
+error en la cadena 53
+error en la cadena 53
+error en la cadena 53
+error en la cadena 53
+error en la cadena 53
+'		cont' es un identidicador valido
+'+' Es un operador 
+'+' Es un operador 
+'
+' es un identidicador valido
+'' es un identidicador valido
+error en la cadena 54
+error en la cadena 54
+error en la cadena 54
+error en la cadena 54
+error en la cadena 54
+error en la cadena 54
+error en la cadena 54
+'		printf' es un identidicador valido
+error en la cadena 54
+error en la cadena 54
+error en la cadena 54
+error en la cadena 54
+error en la cadena 54
+error en la cadena 54
+'"\n%ld"' es un identidicador valido
+'b' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 54
+error en la cadena 55
+error en la cadena 55
+'		d' es un identidicador valido
+'=' Es un operador 
+'a' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 55
+error en la cadena 56
+error en la cadena 56
+'		a' es un identidicador valido
+'=' Es un operador 
+'b' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 56
+error en la cadena 57
+error en la cadena 57
+'		b' es un identidicador valido
+'=' Es un operador 
+'b' es un identidicador valido
+'+' Es un operador 
+'d' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 57
+'	' es un identidicador valido
+'
+' es un identidicador valido
+'' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 59
+error en la cadena 60
+'	f' es un identidicador valido
+'=' Es un operador 
+error en la cadena 60
+error en la cadena 60
+error en la cadena 60
+error en la cadena 60
+error en la cadena 60
+'double' 	 una plabra reservada 60 
+'b' es un identidicador valido
+'/' es un identidicador valido
+error en la cadena 60
+error en la cadena 60
+error en la cadena 60
+error en la cadena 60
+error en la cadena 60
+'double' 	 una plabra reservada 60 
+'a' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 60
+error en la cadena 61
+'	e' es un identidicador valido
+'=' Es un operador 
+error en la cadena 61
+error en la cadena 61
+error en la cadena 61
+error en la cadena 61
+error en la cadena 61
+'double' 	 una plabra reservada 61 
+error en la cadena 61
+error en la cadena 61
+error en la cadena 61
+'cont' es un identidicador valido
+'/' es un identidicador valido
+error en la cadena 61
+error en la cadena 61
+error en la cadena 61
+error en la cadena 61
+error en la cadena 61
+'double' 	 una plabra reservada 61 
+'c' es un identidicador valido
+'*' Es un operador 
+error en la cadena 61
+error en la cadena 61
+error en la cadena 61
+error en la cadena 61
+error en la cadena 61
+'double' 	 una plabra reservada 61 
+error en la cadena 61
+error en la cadena 61
+'100' Es un entero 
+'
+' es un identidicador valido
+error en la cadena 61
+'
+' es un identidicador valido
+'' es un identidicador valido
+error en la cadena 63
+error en la cadena 63
+error en la cadena 63
+error en la cadena 63
+error en la cadena 63
+'printf' es un identidicador valido
+error en la cadena 63
+error en la cadena 63
+'"e"' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 63
+error en la cadena 64
+error en la cadena 64
+error en la cadena 64
+error en la cadena 64
+error en la cadena 64
+error en la cadena 64
+error en la cadena 64
+error en la cadena 64
+error en la cadena 64
+'//contador' es un identidicador valido
+error en la cadena 64
+'de' es un identidicador valido
+error en la cadena 64
+error en la cadena 64
+error en la cadena 64
+error en la cadena 64
+error en la cadena 64
+error en la cadena 64
+'numeros' es un identidicador valido
+error en la cadena 64
+error en la cadena 64
+error en la cadena 64
+error en la cadena 64
+error en la cadena 64
+'pares
+' es un identidicador valido
+'' es un identidicador valido
+error en la cadena 65
+error en la cadena 65
+'int' 	 una plabra reservada 65 
+error en la cadena 65
+error en la cadena 65
+error en la cadena 65
+'num1' es un identidicador valido
+error en la cadena 65
+error en la cadena 65
+error en la cadena 65
+'num2' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 65
+error en la cadena 66
+error en la cadena 66
+error en la cadena 66
+error en la cadena 66
+'while' 	 una plabra reservada 66 
+error en la cadena 66
+error en la cadena 66
+error en la cadena 66
+'num1' es un identidicador valido
+'<' Es un operador 
+'=' Es un operador 
+error en la cadena 66
+error en la cadena 66
+error en la cadena 66
+'num2' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 66
+'
+' es un identidicador valido
+'' es un identidicador valido
+error en la cadena 68
+'if' 	 una plabra reservada 68 
+error en la cadena 68
+error en la cadena 68
+error en la cadena 68
+error en la cadena 68
+error en la cadena 68
+error en la cadena 68
+'num1%2!' es un identidicador valido
+'=' Es un operador 
+'0' Es un entero 
+'
+' es un identidicador valido
+'' es un identidicador valido
+'c' es un identidicador valido
+'=' Es un operador 
+'c' es un identidicador valido
+'+' Es un operador 
+'1' Es un entero 
+error en la cadena 69
+error en la cadena 69
+error en la cadena 69
+'num1' es un identidicador valido
+'=' Es un operador 
+error en la cadena 69
+error en la cadena 69
+error en la cadena 69
+'num1' es un identidicador valido
+'+' Es un operador 
+'1' Es un entero 
+'
+' es un identidicador valido
+error en la cadena 69
+'
+' es un identidicador valido
+'' es un identidicador valido
+error en la cadena 71
+error en la cadena 71
+error en la cadena 71
+error en la cadena 71
+error en la cadena 71
+error en la cadena 71
+error en la cadena 71
+error en la cadena 71
+error en la cadena 71
+error en la cadena 71
+error en la cadena 71
+error en la cadena 71
+error en la cadena 71
+'//finalisacion' es un identidicador valido
+error en la cadena 71
+error en la cadena 71
+'del' es un identidicador valido
+error en la cadena 71
+error en la cadena 71
+error en la cadena 71
+error en la cadena 71
+error en la cadena 71
+error en la cadena 71
+error en la cadena 71
+error en la cadena 71
+error en la cadena 71
+'contadores' es un identidicador valido
+error en la cadena 71
+'de' es un identidicador valido
+error en la cadena 71
+error en la cadena 71
+'los' es un identidicador valido
+error en la cadena 71
+error en la cadena 71
+error en la cadena 71
+error en la cadena 71
+error en la cadena 71
+error en la cadena 71
+'numeros' es un identidicador valido
+error en la cadena 71
+error en la cadena 71
+error en la cadena 71
+error en la cadena 71
+error en la cadena 71
+'pares
+' es un identidicador valido
+error en la cadena 71
+error en la cadena 72
+error en la cadena 72
+'int' 	 una plabra reservada 72 
+'m' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 72
+error en la cadena 73
+error en la cadena 73
+error en la cadena 73
+error en la cadena 73
+error en la cadena 73
+'switch' 	 una plabra reservada 73 
+'m' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 73
+'
+' es un identidicador valido
+error en la cadena 74
+error en la cadena 75
+error en la cadena 75
+error en la cadena 75
+'case' 	 una plabra reservada 75 
+error en la cadena 75
+error en la cadena 75
+error en la cadena 75
+error en la cadena 75
+error en la cadena 75
+error en la cadena 75
+error en la cadena 75
+'1:printf' no es un identidicador
+'a' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 75
+error en la cadena 76
+error en la cadena 76
+error en la cadena 76
+'case' 	 una plabra reservada 76 
+error en la cadena 76
+error en la cadena 76
+error en la cadena 76
+error en la cadena 76
+error en la cadena 76
+error en la cadena 76
+error en la cadena 76
+'2://cout' no es un identidicador
+'<' Es un operador 
+'<' Es un operador 
+error en la cadena 76
+error en la cadena 76
+error en la cadena 76
+error en la cadena 76
+error en la cadena 76
+'"¿Que' es un identidicador valido
+error en la cadena 76
+error en la cadena 76
+error en la cadena 76
+error en la cadena 76
+'desea' es un identidicador valido
+error en la cadena 76
+error en la cadena 76
+error en la cadena 76
+error en la cadena 76
+error en la cadena 76
+error en la cadena 76
+error en la cadena 76
+error en la cadena 76
+error en la cadena 76
+error en la cadena 76
+'modificar?"' es un identidicador valido
+'<' Es un operador 
+'<' Es un operador 
+error en la cadena 76
+error en la cadena 76
+error en la cadena 76
+'endl' es un identidicador valido
+error en la cadena 76
+error en la cadena 76
+error en la cadena 76
+error en la cadena 76
+'break' 	 una plabra reservada 76 
+'
+' es un identidicador valido
+error en la cadena 76
+error en la cadena 77
+error en la cadena 77
+error en la cadena 77
+'case' 	 una plabra reservada 77 
+error en la cadena 77
+error en la cadena 77
+error en la cadena 77
+error en la cadena 77
+error en la cadena 77
+error en la cadena 77
+'3:while' no es un identidicador
+'a' es un identidicador valido
+'>' Es un operador 
+'=' Es un operador 
+'c' es un identidicador valido
+error en la cadena 77
+'&&' es un identidicador valido
+error en la cadena 77
+'c!' es un identidicador valido
+'=' Es un operador 
+'b' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 77
+error en la cadena 78
+error en la cadena 78
+error en la cadena 78
+error en la cadena 78
+error en la cadena 78
+'return' 	 una plabra reservada 78 
+'0' Es un entero 
+'
+' es un identidicador valido
+error en la cadena 78
+'
+' es un identidicador valido
+'' es un identidicador valido
+error en la cadena 80
+error en la cadena 80
+error en la cadena 80
+'case' 	 una plabra reservada 80 
+error en la cadena 80
+error en la cadena 80
+error en la cadena 80
+error en la cadena 80
+error en la cadena 80
+error en la cadena 80
+error en la cadena 80
+'4://cout' no es un identidicador
+'<' Es un operador 
+'<' Es un operador 
+error en la cadena 80
+error en la cadena 80
+error en la cadena 80
+'"Ud.' es un identidicador valido
+error en la cadena 80
+'no' es un identidicador valido
+error en la cadena 80
+error en la cadena 80
+error en la cadena 80
+error en la cadena 80
+error en la cadena 80
+error en la cadena 80
+error en la cadena 80
+'presenta' es un identidicador valido
+error en la cadena 80
+error en la cadena 80
+error en la cadena 80
+error en la cadena 80
+error en la cadena 80
+error en la cadena 80
+error en la cadena 80
+error en la cadena 80
+'reportes"' es un identidicador valido
+'<' Es un operador 
+'<' Es un operador 
+error en la cadena 80
+error en la cadena 80
+error en la cadena 80
+'endl' es un identidicador valido
+error en la cadena 80
+error en la cadena 80
+error en la cadena 80
+error en la cadena 80
+'break' 	 una plabra reservada 80 
+'
+' es un identidicador valido
+error en la cadena 80
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+'case' 	 una plabra reservada 81 
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+'5://cout' no es un identidicador
+'<' Es un operador 
+'<' Es un operador 
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+'"Este' es un identidicador valido
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+'servicio' es un identidicador valido
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+'esta' es un identidicador valido
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+'bloqueado' es un identidicador valido
+error en la cadena 81
+error en la cadena 81
+'por' es un identidicador valido
+error en la cadena 81
+'el' es un identidicador valido
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+'momento"' es un identidicador valido
+'<' Es un operador 
+'<' Es un operador 
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+'endl' es un identidicador valido
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+error en la cadena 81
+'break' 	 una plabra reservada 81 
+'
+' es un identidicador valido
+error en la cadena 81
+error en la cadena 82
+error en la cadena 82
+error en la cadena 82
+'case' 	 una plabra reservada 82 
+error en la cadena 82
+error en la cadena 82
+error en la cadena 82
+error en la cadena 82
+error en la cadena 82
+error en la cadena 82
+error en la cadena 82
+'6://cout' no es un identidicador
+'<' Es un operador 
+'<' Es un operador 
+error en la cadena 82
+error en la cadena 82
+'"Ya' es un identidicador valido
+error en la cadena 82
+error en la cadena 82
+error en la cadena 82
+'esta' es un identidicador valido
+error en la cadena 82
+error en la cadena 82
+error en la cadena 82
+error en la cadena 82
+error en la cadena 82
+'fuera"' es un identidicador valido
+'<' Es un operador 
+'<' Es un operador 
+error en la cadena 82
+error en la cadena 82
+error en la cadena 82
+'endl' es un identidicador valido
+error en la cadena 82
+error en la cadena 82
+error en la cadena 82
+error en la cadena 82
+'break' 	 una plabra reservada 82 
+'
+' es un identidicador valido
+error en la cadena 82
+error en la cadena 83
+error en la cadena 83
+error en la cadena 83
+error en la cadena 83
+error en la cadena 83
+error en la cadena 83
+error en la cadena 83
+error en la cadena 83
+error en la cadena 83
+'//default:' es un identidicador valido
+error en la cadena 83
+error en la cadena 83
+error en la cadena 83
+error en la cadena 83
+error en la cadena 83
+'//cout' es un identidicador valido
+'<' Es un operador 
+'<' Es un operador 
+error en la cadena 83
+error en la cadena 83
+'"El' es un identidicador valido
+error en la cadena 83
+error en la cadena 83
+error en la cadena 83
+error en la cadena 83
+'valor' es un identidicador valido
+error en la cadena 83
+error en la cadena 83
+error en la cadena 83
+error en la cadena 83
+error en la cadena 83
+error en la cadena 83
+error en la cadena 83
+error en la cadena 83
+'ingresado' es un identidicador valido
+error en la cadena 83
+'no' es un identidicador valido
+error en la cadena 83
+error en la cadena 83
+error en la cadena 83
+'esta' es un identidicador valido
+error en la cadena 83
+'en' es un identidicador valido
+error en la cadena 83
+'el' es un identidicador valido
+error en la cadena 83
+error en la cadena 83
+error en la cadena 83
+error en la cadena 83
+'menu"' es un identidicador valido
+'<' Es un operador 
+'<' Es un operador 
+error en la cadena 83
+error en la cadena 83
+error en la cadena 83
+'endl' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 83
+'
+' es un identidicador valido
+error en la cadena 84
+'
+' es un identidicador valido
+error en la cadena 85
+'
+' es un identidicador valido
+error en la cadena 86
+error en la cadena 87
+error en la cadena 87
+'int' 	 una plabra reservada 87 
+error en la cadena 87
+error en la cadena 87
+error en la cadena 87
+error en la cadena 87
+error en la cadena 87
+error en la cadena 87
+error en la cadena 87
+error en la cadena 87
+error en la cadena 87
+error en la cadena 87
+error en la cadena 87
+error en la cadena 87
+error en la cadena 87
+error en la cadena 87
+error en la cadena 87
+error en la cadena 87
+error en la cadena 87
+error en la cadena 87
+error en la cadena 87
+'ejemplodeclaseentera' es un identidicador valido
+'a' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 87
+'
+' es un identidicador valido
+'' es un identidicador valido
+error en la cadena 89
+error en la cadena 89
+error en la cadena 89
+error en la cadena 89
+'float' 	 una plabra reservada 89 
+'c' es un identidicador valido
+'l' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 89
+'c' es un identidicador valido
+'=' Es un operador 
+error en la cadena 90
+error en la cadena 90
+error en la cadena 90
+error en la cadena 90
+error en la cadena 90
+'100000' Es un entero 
+'
+' es un identidicador valido
+error en la cadena 90
+'l' es un identidicador valido
+'=' Es un operador 
+error en la cadena 91
+'10' Es un entero 
+'
+' es un identidicador valido
+error en la cadena 91
+'a' es un identidicador valido
+'=' Es un operador 
+'c' es un identidicador valido
+'*' Es un operador 
+'l' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 92
+error en la cadena 93
+error en la cadena 93
+error en la cadena 93
+error en la cadena 93
+error en la cadena 93
+'return' 	 una plabra reservada 93 
+'a' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 93
+'
+' es un identidicador valido
+'' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 95
+error en la cadena 96
+error en la cadena 96
+error en la cadena 96
+'void' 	 una plabra reservada 96 
+error en la cadena 96
+error en la cadena 96
+error en la cadena 96
+error en la cadena 96
+error en la cadena 96
+error en la cadena 96
+error en la cadena 96
+error en la cadena 96
+error en la cadena 96
+error en la cadena 96
+error en la cadena 96
+error en la cadena 96
+error en la cadena 96
+'ejemplodeclase' es un identidicador valido
+error en la cadena 96
+error en la cadena 96
+'int' 	 una plabra reservada 96 
+'a' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 96
+'
+' es un identidicador valido
+error en la cadena 97
+error en la cadena 98
+error en la cadena 98
+error en la cadena 98
+'char' 	 una plabra reservada 98 
+'f' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 98
+error en la cadena 99
+'if' 	 una plabra reservada 99 
+'a' es un identidicador valido
+'=' Es un operador 
+'=' Es un operador 
+'b' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 99
+'
+' es un identidicador valido
+error en la cadena 100
+'a' es un identidicador valido
+'=' Es un operador 
+'f' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 101
+error en la cadena 102
+error en la cadena 102
+error en la cadena 102
+'else' 	 una plabra reservada 102 
+'
+' es un identidicador valido
+error en la cadena 102
+error en la cadena 103
+error en la cadena 103
+error en la cadena 103
+error en la cadena 103
+error en la cadena 103
+error en la cadena 103
+error en la cadena 103
+error en la cadena 103
+error en la cadena 103
+error en la cadena 103
+error en la cadena 103
+error en la cadena 103
+error en la cadena 103
+error en la cadena 103
+error en la cadena 103
+error en la cadena 103
+error en la cadena 103
+error en la cadena 103
+error en la cadena 103
+'ejemplodeclaseentera' es un identidicador valido
+'a' es un identidicador valido
+'
+' es un identidicador valido
+'' es un identidicador valido
+'
+' es un identidicador valido
+error en la cadena 104
+'
+' es un identidicador valido
+'' es un identidicador valido
+'
+' es un identidicador valido
+'' es un identidicador valido

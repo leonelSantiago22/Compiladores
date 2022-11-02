@@ -15,7 +15,7 @@ const string KEY_SET[]={ // Colección de palabras clave
         "switch",
         "case",
         "break",
-        "continue",
+        "void",
         "if",
         "else",
         "char",
@@ -23,13 +23,13 @@ const string KEY_SET[]={ // Colección de palabras clave
         "float",
         "return",
         "main",
-        "const",
+        "double",
         "string",
         "printf",
-        "vector",
+        "include",
 };
 map<string,int> word_num; //Número de palabras
-const char* FILE_NAME="./infile.txt";
+const char* FILE_NAME="./infile.c";
 char strBuffer[1026]; // Búfer de cadenas
 string token;
 const string operadores_relacionales[] = {">", "<", ">=", "<=", "=", "<>"};
@@ -55,7 +55,7 @@ bool esunaLetra(char c)
 
 bool operadorAritmetico(char c) // Determinar si es un signo de puntuación
 {
-    return c=='+' || c=='-' || c=='*' || c=='/' || c=='%' || c=='{' || c=='}'|| c==';' || c==':' || c=='#' || c=='"' || c==',';
+    return c=='+' || c=='-' || c=='*' || c=='/' || c=='%' || c==';' || c==':' || c=='#' || c=='"' || c==',';
 }
 //es una palabra clave
 bool palabraReservada(string str)
@@ -306,6 +306,7 @@ void process_string(char* buf) // El contenido de una línea de cadena
                     state = 9;
                     C = getChar(buf);
                 break;
+                //operadores relacionales con igualdad
             case 10:
                 if(C=='=')
                 {
@@ -323,6 +324,7 @@ void process_string(char* buf) // El contenido de una línea de cadena
                     state = 0;
                 }
                 break;
+                //diferenciacion entre and de compuerta y and en un if
             case 11:
                 if(C=='&')
                 {
@@ -339,6 +341,7 @@ void process_string(char* buf) // El contenido de una línea de cadena
                     state=0;
                 }
                 break;
+            //nos permite conocer entre el or
             case 12:
                 if(C=='|')
                 {
