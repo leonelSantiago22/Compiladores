@@ -1,0 +1,95 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+// Funcion que recibe dos numeros, los suma y devuelve el resultado 
+int suma(int num1, int num2);
+// Funcion que recibe dos numeros, los resta y devuelve el resultado 
+int resta(int num1, int num2);
+// Funcion que recibe dos numeros, los multiplica y devulve el resultado 
+int mult(int num1, int num2);
+// Funcion que recibe dos numeros, los divide y devuleve el resultado
+int div(int num1, int num2);
+// Funcion de menu de opciones y devuelve la opcion elegida
+int menu();
+
+int main() 
+{
+    int num1, num2, opc = 0;
+    double result;
+
+    printf("Introduzca el primer numero: ");
+    scanf("%i", &num1);
+    printf("Introduzca el segundo numero: ");
+    scanf("%i", &num2);
+
+    while(opc != 5) 
+    {
+        opc = menu();
+        switch(opc) 
+        {
+            case 1: 
+                result = suma(num1, num2);
+                printf("%i", result);  
+                break;
+            case 2: 
+                result = resta(num1, num2);
+                printf("%i", result);
+                break;
+            case 3: 
+                result = mult(num1, num2);
+                printf("%i", result);
+                break;
+            case 4: 
+                result = div(num1, num2);
+                printf("%i", result);
+                break;
+            default:
+                break;
+        }
+    }
+
+    return 0;
+}
+
+// Devuelve la suma de dos numeros
+int suma(int num1, int num2) 
+{
+    return num1 + num2;
+}
+
+// Duvuelve la resta de dos numeros
+int resta(int num1, int num2) 
+{
+    return num1 - num2;
+}
+
+// Devuelve la multiplicacion de dos numeros
+int mult(int num1, int num2) 
+{
+    return num1 * num2;
+}
+
+// Devuelve la division de dos numeros
+int div(int num1, int num2) 
+{
+    if(num2 == 0) {
+        printf("Indefinido. No se puede hacer una division entre 0");
+    }
+    else {
+        return num1 / num2;   
+    }
+}
+
+// Menu de opciones
+int menu() 
+{
+    int opc
+    printf("\n1.- Suma");
+    printf("\n2.- Resta");
+    printf("\n3.- Multiplicacion");
+    printf("\n4.- Division\n\n");
+    printf("Introduzca una opcion: ")
+    scanf("%i", &opc);
+    return opc
+}
