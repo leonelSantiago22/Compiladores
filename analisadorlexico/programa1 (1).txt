@@ -48,14 +48,7 @@ int main()
                 break;
         }
     }
-    for(int j=0; j<0; j++)
-    {
-        int a,f,k;
-        f = k;
-        f = a;
-        f = f * f ;
-    }
-    printf(f);
+
     return 0;
 }
 

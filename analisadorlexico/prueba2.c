@@ -71,9 +71,7 @@ bool palabraReservada(char* str)
 
         !strcmp(str, "while") || !strcmp(str, "do") ||
 
-        !strcmp(str, "break") ||
-
-         !strcmp(str, "continue") || !strcmp(str, "int")
+        !strcmp(str, "break") || !strcmp(str, "continue") || !strcmp(str, "int")
 
         || !strcmp(str, "double") || !strcmp(str, "float")
 
@@ -163,21 +161,21 @@ bool isRealNumber(char* str)
 
 // Extracts the SUBSTRING.
 
-char* subString(char* str, int left, int right)
+char* subString(char* str, int Izquierda, int Derecha)
 {
 
     int i;
 
     char* subStr = (char*)malloc(
 
-                  sizeof(char) * (right - left + 2));
+                  sizeof(char) * (Derecha - Izquierda + 2));
 
 
-    for (i = left; i <= right; i++)
+    for (i = Izquierda; i <= Derecha; i++)
 
-        subStr[i - left] = str[i];
+        subStr[i - Izquierda] = str[i];
 
-    subStr[right - left + 1] = '\0';
+    subStr[Derecha - Izquierda + 1] = '\0';
 
     return (subStr);
 }
@@ -187,77 +185,53 @@ int tipodeestado = 0;
 void parse(char* str)
 {
 
-    int left = 0, right = 0;
+    int Izquierda = 0, Derecha = 0;
 
     int len = strlen(str);
 
-    if(tipodeestado != 7 ){
-      if (str[right] == '/') {
-         if (str[right+1] == '/') {
-           tipodeestado =7;
-         }
-      }else{
-        tipodeestado =0;
-      }
-    while (right <= len && left <= right) {
+
+    while (Derecha <= len && Izquierda <= Derecha) {
           tipodeestado =0;
-        if (esunDelimitador(str[right]) == false)
+        if (esunDelimitador(str[Derecha]) == false)
+          {
+            Derecha++;
+          }
+        if (esunDelimitador(str[Derecha]) == true && Izquierda == Derecha) {
 
-            right++;
+            if (OperadorRelacional(str[Derecha]) == true){
+                printf("'%c' Es un operador \n", str[Derecha]);
+              }
+            Derecha++;
+            Izquierda = Derecha;
+        } else if (esunDelimitador(str[Derecha]) == true && Izquierda != Derecha || (Derecha == len && Izquierda != Derecha)) {
 
-
-        if (esunDelimitador(str[right]) == true && left == right) {
-
-            if (OperadorRelacional(str[right]) == true)
-                printf("'%c' Es un operador \n", str[right]);
-
-
-            right++;
-
-            left = right;
-
-        } else if (esunDelimitador(str[right]) == true && left != right
-
-                   || (right == len && left != right)) {
-
-            char* subStr = subString(str, left, right - 1);
+            char* subStr = subString(str, Izquierda, Derecha - 1);
 
 
             if (palabraReservada(subStr) == true)
-
+            {
                 printf("'%s' \t una plabra reservada %d \n", subStr, contadordelineas);
-
-
+            }
             else if (esunnumerEntero(subStr) == true)
-
+            {
                 printf("'%s' Es un entero \n", subStr);
-
+            }
 
             else if (isRealNumber(subStr) == true)
-
+            {
                 printf("'%s' Es un numero real \n", subStr);
+            }
 
-
-            else if (IndentificadorValido(subStr) == true
-
-                     && esunDelimitador(str[right - 1]) == false)
-
+            else if (IndentificadorValido(subStr) == true && esunDelimitador(str[Derecha - 1]) == false){
                 printf("'%s' es un identidicador valido\n", subStr);
+              }
 
-
-            else if (IndentificadorValido(subStr) == false
-
-                     && esunDelimitador(str[right - 1]) == false)
-
-                printf("'%s' no es un identidicador\n", subStr);
-
-            left = right;
-
-        }else{
-          printf("error en la cadena %d\n",contadordelineas );
+            else if (IndentificadorValido(subStr) == false && esunDelimitador(str[Derecha - 1]) == false)
+            {
+                //printf("'%s' no es un identidicador\n", subStr);
+            }
+            Izquierda = Derecha;
         }
-
-    }
     }
     return;
 }
@@ -283,9 +257,7 @@ int main()
         parse(strBuffer);
     }
     fclose(file);
-    //char str[100] = "int a = b + 1c; ";
-
-    //parse(str); // calling the parse function
+    printf("Numero de lineas %d", contadordelineas);
 
 
     return (0);
