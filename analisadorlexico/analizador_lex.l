@@ -29,7 +29,9 @@ PAR_ABRE		"("
 PAR_CIERRA		")"
 COR_ABRE		"["
 COR_CIERRA		"]"
-
+nvalin   ["\n"]
+e [ \t]
+eb {e}+
 CHAR_COMA		","
 CHAR_PUNTO 		"."
 CHAR_PUNTOCOMA	";"
@@ -75,6 +77,9 @@ Error .
 
 
 %%
+{nvalin}		{printf("\n Salto de linea:(%s) ",yytext);nolin++;}
+{eb}			{printf("\n Tabulador:(%s) ",yytext);}
+{COMENTARIO}	{printf("\n COMENTARIO EN LINEA %d", nolin);}
 {IF}        	{printf("\n palabra reservada if:(%s) ",yytext); return(101);}
 {FOR}	      	{printf("\n palabra reservada for:(%s) ",yytext);return(102);}
 {WHILE}     	{printf("\n palabra reservada while:(%s) ",yytext);return(103);}
@@ -104,7 +109,6 @@ Error .
 {PAR_CIERRA}	{printf("\n PAR_CIERRA:(%s) ",yytext);return(127);}
 {COR_ABRE}		{printf("\n COR_ABRE:(%s) ",yytext);return(128);}
 {COR_CIERRA}	{printf("\n COR_CIERRA:(%s) ",yytext);return(129);}
-
 {CHAR_COMA}		{printf("\n COMA:(%s) ",yytext);return(131);}
 {CHAR_PUNTO} 	{printf("\n PUNTO:(%s) ",yytext);return(132);}
 {CHAR_PUNTOCOMA}  {printf("\n PUNTO Y COMA:(%s) ",yytext);return(133);}
@@ -121,27 +125,29 @@ Error .
 {OP_COPMENOR}	 {printf("\n Operador Rel ==:(%s) ",yytext);return(144);}
 {OP_NEGACION}	 {printf("\n Operador Rel !:(%s) ",yytext);return(145);}
 
-{Error} 		{error++; printf("Se leyo el caracter no reconocido: %s\n",yytext);}
+{Error} 		{error++; printf("\nSe leyo el caracter no reconocido: (%s) linea: %d\n",yytext, nolin);}
 
 %%
 
 int main(int argc, char *argv[])
 {
-  if ((fuente=fopen(argv[1],"r"))==NULL)
-		  {
+ //freopen("./outfile.txt","w",stdout); // Redireccion de salida, los datos de salida se guardaran en el archivo out.txt 
+  if ((fuente=fopen(argv[1],"r"))!=NULL){
+        yyin=fuente;
+        que_es=yylex();
+		while (que_es!=0)
+		{
+			printf("\tNumero de token: %d\n", que_es);
+			
+			que_es=yylex();
+			getchar();
+		}
+
+	}
+	else{
 		   printf("\nError, No se puede abrir archivo");
 		   exit(1);
 		  }
-        yyin=fuente;
-        que_es=yylex();
-        while (que_es!=0)
-	  {
-
-		  printf("\tNumero de token: %d\n", que_es);
-                  que_es=yylex();
-		  getchar();
-	 }
-	 freopen("./outfile.txt","w",stdout); // Redireccion de salida, los datos de salida se guardaran en el archivo out.txt 
     fclose(fuente);
 	
 	printf("\nNumero de lineas analizadas: %d", nolin);
