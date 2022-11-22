@@ -16,9 +16,9 @@ FILE *fuente;
 %option yylineno
 
 
-DIGITO			[0-9]
+DIGITO			[0-9]+
 LETRA		    [a-zA-Z]
-ESPACIO			" "
+ESPACIO			["\0"]
 INICOMENTARIO	["/*"]
 FINCOMENTARIO	["*/"]
 GUIONBAJO		[_]
@@ -29,22 +29,24 @@ PAR_ABRE		"("
 PAR_CIERRA		")"
 COR_ABRE		"["
 COR_CIERRA		"]"
-nvalin   ["\n"]
-e [ \t]
+nvalin   		["\n"]
+e [ "\t"]
 eb {e}+
 CHAR_COMA		","
 CHAR_PUNTO 		"."
 CHAR_PUNTOCOMA	";"
 CHAR_DOSPUNTOS	":"
-COMENTARIO 		"//".*\n
-IDENTIFICADOR	({LETRA}|{GUIONBAJO})({LETRA}|{DIGITO})*
-NUMERO_REAL     (-?{DIGITO})+({CHAR_PUNTO})
-CADENA 			\"["\n"]*\"
+COMENTARIO 	 	"//"[^\n]*
+IDENTIFICADOR	({LETRA}+|{GUIONBAJO})({LETRA}|{DIGITO})*
+NUMERO_REAL     {DIGITO}.{DIGITO}
+CADENA 			\"[^"]*\"
+NUMERO_REAL2	{NUMERO_REAL}[eE][\+\-]?{DIGITO}
+NUMERO 			{DIGITO}|{NUMERO_REAL}|{NUMERO_REAL2}
 /*Operadores logicos y aritmeticos basicos */
 OP_MAS  		"+"
 OP_MENOS  		"-"
 OP_POR  		"*"
-OP_DIV 			 "/"
+OP_DIV 			["/"]
 OP_IGUAL		"="
 OP_MAYOR		">"
 OP_MENOR		"<"
@@ -73,38 +75,39 @@ PRINTF	 "printf"
 VECTOR	 "vector"
 CONST    "const"
 MAIN     "main"
-Error .
+Error     .
 
 
 %%
 {nvalin}		{printf("\n Salto de linea:(%s) ",yytext);nolin++;}
-{eb}			{printf("\n Tabulador:(%s) ",yytext);}
-{COMENTARIO}	{printf("\n COMENTARIO EN LINEA %d", nolin);}
-{IF}        	{printf("\n palabra reservada if:(%s) ",yytext); return(101);}
-{FOR}	      	{printf("\n palabra reservada for:(%s) ",yytext);return(102);}
-{WHILE}     	{printf("\n palabra reservada while:(%s) ",yytext);return(103);}
-{DO}        	{printf("\n palabra reservada do: (%s) ",yytext);return(104);}
-{SWITCH}    	{printf("\n palabra reservada switch:(%s) ",yytext);return(105);}
-{CASE}      	{printf("\n palabra reservada case:(%s) ",yytext);return(106);}
-{BREAK}     	{printf("\n palabra reservada break:(%s) ",yytext);return(107);}
-{CONTINUE}  	{printf("\n palabra reservada continue:(%s) ",yytext);return(108);}
-{ELSE}      	{printf("\n palabra reservada else:(%s) ",yytext);return(109);}
-{RETURN}    	{printf("\n palabra reservada return:(%s) ",yytext);return(110);}
-{EXTERN}    	{printf("\n palabra reservada extern:(%s) ",yytext);return(111);}
-{PRINTF}    	{printf("\n palabra reservada printf:(%s) ",yytext);return(112);}
-{VECTOR}    	{printf("\n palabra reservada vector:(%s) ",yytext);return(113);}
-{CONST}     	{printf("\n palabra reservada const:(%s) ",yytext);return(114);}
-{MAIN}      	{printf("\n palabra reservada main:(%s) ",yytext);return(115);}
-{INT}	    	{printf("\n tipo de dato int:(%s) ",yytext);return(116);}
-{FLOAT} 	  	{printf("\n tipo de dato float:(%s) ",yytext);return(117);}
-{DOUBLE} 	  	{printf("\n tipo de dato double:(%s) ",yytext);return(118);}
-{CHAR} 	    	{printf("\n tipo de dato char:(%s) ",yytext);return(119);}
-{IDENTIFICADOR}	{printf("\n Identificador:(%s) ",yytext);return(120);}
-{NUMERO_REAL}   {printf("\n Numero real:(%s) ",yytext);return(121);}
-{CADENA}        {printf("\n Numero real:(%s) ",yytext);return(122);}
-{GUIONES}		{printf("\n GUIONES:(%s) ",yytext);return(123);}
-{LLAVE_ABRE}	{printf("\n LLAVE_ABRE:(%s) ",yytext);return(124);}
-{LLAVE_CIERRA}	{printf("\n LLAVE_CIERRA:(%s) ",yytext);return(125);}
+{e}
+{ESPACIO}		{printf("ESPACIO: JIJI %s", yytext);}
+{COMENTARIO}	{printf("\n COMENTARIO EN LINEA (%s) linea : %d ", yytext, nolin);}
+{IF}        	{printf("\n palabra reservada if:(%s)  linea : %d ",yytext, nolin); return(101);}
+{FOR}	      	{printf("\n palabra reservada for:(%s) linea : %d  ",yytext, nolin);return(102);}
+{WHILE}     	{printf("\n palabra reservada while:(%s) linea : %d ",yytext, nolin);return(103);}
+{DO}        	{printf("\n palabra reservada do: (%s) linea : %d ",yytext, nolin);return(104);}
+{SWITCH}    	{printf("\n palabra reservada switch:(%s)  linea : %d ",yytext, nolin);return(105);}
+{CASE}      	{printf("\n palabra reservada case:(%s) linea : %d ",yytext, nolin);return(106);}
+{BREAK}     	{printf("\n palabra reservada break:(%s) linea : %d ",yytext, nolin);return(107);}
+{CONTINUE}  	{printf("\n palabra reservada continue:(%s) linea : %d ",yytext, nolin);return(108);}
+{ELSE}      	{printf("\n palabra reservada else:(%s) linea : %d ",yytext, nolin);return(109);}
+{RETURN}    	{printf("\n palabra reservada return:(%s) linea : %d ",yytext, nolin);return(110);}
+{EXTERN}    	{printf("\n palabra reservada extern:(%s)  linea : %d",yytext, nolin);return(111);}
+{PRINTF}    	{printf("\n palabra reservada printf:(%s)  linea : %d ",yytext, nolin);return(112);}
+{VECTOR}    	{printf("\n palabra reservada vector:(%s) linea : %d",yytext, nolin);return(113);}
+{CONST}     	{printf("\n palabra reservada const:(%s)  linea : %d ",yytext, nolin);return(114);}
+{MAIN}      	{printf("\n palabra reservada main:(%s) linea : %d ",yytext, nolin);return(115);}
+{INT}	    	{printf("\n tipo de dato int:(%s) linea : %d",yytext, nolin);return(116);}
+{FLOAT} 	  	{printf("\n tipo de dato float:(%s) linea : %d ",yytext, nolin);return(117);}
+{DOUBLE} 	  	{printf("\n tipo de dato double:(%s) linea : %d ",yytext, nolin);return(118);}
+{CHAR} 	    	{printf("\n tipo de dato char:(%s) linea : %d ",yytext, nolin);return(119);}
+{IDENTIFICADOR}	{printf("\n Identificador:(%s) linea : %d ",yytext, nolin);return(120);}
+{NUMERO}   {printf("\n Numero:(%s)  linea : %d ",yytext, nolin);return(121);}
+{CADENA}        {printf("\n CADENA DE TEXTO:(%s) ",yytext);return(122);}
+{GUIONES}		{printf("\n GUIONES:(%s) linea : %d",yytext, nolin);return(123);}
+{LLAVE_ABRE}	{printf("\n LLAVE_ABRE:(%s) linea : %d",yytext, nolin);return(124);}
+{LLAVE_CIERRA}	{printf("\n LLAVE_CIERRA:(%s) linea : %d ",yytext, nolin);return(125);}
 {PAR_ABRE}		{printf("\n PAR_ABRE:(%s) ",yytext);return(126);}
 {PAR_CIERRA}	{printf("\n PAR_CIERRA:(%s) ",yytext);return(127);}
 {COR_ABRE}		{printf("\n COR_ABRE:(%s) ",yytext);return(128);}
@@ -113,18 +116,16 @@ Error .
 {CHAR_PUNTO} 	{printf("\n PUNTO:(%s) ",yytext);return(132);}
 {CHAR_PUNTOCOMA}  {printf("\n PUNTO Y COMA:(%s) ",yytext);return(133);}
 {CHAR_DOSPUNTOS}  {printf("\n DOS PUNTOS :(%s) ",yytext);return(134);}
-{OP_MAS}  		{printf("\n Operador +:(%s) ",yytext);return(135);}
-
-{OP_POR}  		 {printf("\n Operador *:(%s) ",yytext);return(137);}
-{OP_DIV} 		 {printf("\n Operador /:(%s) ",yytext);return(138);}
-{OP_IGUAL}		 {printf("\n Operador =:(%s) ",yytext);return(139);}
-{OP_MAYOR}		 {printf("\n Operador Rel >:(%s) ",yytext);return(140);}
-{OP_MENOR}		 {printf("\n Operador Rel <:(%s) ",yytext);return(141);}
-{OP_MAYORIGUAL}	 {printf("\n Operador Rel >=:(%s) ",yytext);return(142);}
-{OP_MENORRIGUAL} {printf("\n Operador Rel <=:(%s) ",yytext);return(143);}
-{OP_COPMENOR}	 {printf("\n Operador Rel ==:(%s) ",yytext);return(144);}
-{OP_NEGACION}	 {printf("\n Operador Rel !:(%s) ",yytext);return(145);}
-
+{OP_MAS}  		{printf("\n Operador +:(%s) linea : %d ",yytext, nolin);return(135);}
+{OP_POR}  		 {printf("\n Operador *:(%s) linea : %d ",yytext, nolin);return(137);}
+{OP_DIV} 		 {printf("\n Operador /:(%s) linea : %d ",yytext, nolin);return(138);}
+{OP_IGUAL}		 {printf("\n Operador =:(%s) linea : %d ",yytext, nolin);return(139);}
+{OP_MAYOR}		 {printf("\n Operador Rel >:(%s) linea : %d",yytext, nolin);return(140);}
+{OP_MENOR}		 {printf("\n Operador Rel <:(%s) linea : %d  ",yytext, nolin);return(141);}
+{OP_MAYORIGUAL}	 {printf("\n Operador Rel >=:(%s)linea : %d  ",yytext, nolin);return(142);}
+{OP_MENORRIGUAL} {printf("\n Operador Rel <=:(%s) linea : %d  ",yytext, nolin);return(143);}
+{OP_COPMENOR}	 {printf("\n Operador Rel ==:(%s)  linea : %d  ",yytext, nolin);return(144);}
+{OP_NEGACION}	 {printf("\n Operador Rel !:(%s) linea : %d ",yytext, nolin);return(145);}
 {Error} 		{error++; printf("\nSe leyo el caracter no reconocido: (%s) linea: %d\n",yytext, nolin);}
 
 %%
@@ -138,7 +139,6 @@ int main(int argc, char *argv[])
 		while (que_es!=0)
 		{
 			printf("\tNumero de token: %d\n", que_es);
-			
 			que_es=yylex();
 			getchar();
 		}

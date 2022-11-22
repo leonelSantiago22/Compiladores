@@ -39,9 +39,9 @@ CHAR_DOSPUNTOS	[":"]
 
 COMENTARIO 		"//".*\n
 
-IDENTIFICADOR	{LETRA}|{GUIONBAJO}({LETRA}|{DIGITO})*
+IDENTIFICADOR	({LETRA}+|{GUIONBAJO})({LETRA}|{DIGITO})*
 NUMERO_REAL     (-?{DIGITO})({CHAR_PUNTO})
-CADENA 			\"["\n"]*\"
+CADENA 			""[a-zA-Z]""
 
 /*Operadores logicos y aritmeticos basicos */
 
@@ -84,6 +84,8 @@ Error .
 %%
 {IF}       {printf("\n palabra reservada if:(%s) ",yytext);}
 {FOR}	    {printf("\n palabra reservada for:(%s) ",yytext);}
+{CADENA}		{printf("\n Cadena:(%s) ",yytext);}	
+
 {WHILE}     {printf("\n palabra reservada while:(%s) ",yytext);}
 {DO}        {printf("\n palabra reservada do: (%s) ",yytext);}
 {SWITCH}    {printf("\n palabra reservada switch:(%s) ",yytext);}
@@ -103,7 +105,6 @@ Error .
 {CHAR} 	      {printf("\n tipo de dato char:(%s) ",yytext);}
 {IDENTIFICADOR}	{printf("\n Identificador:(%s) ",yytext);}
 {NUMERO_REAL}   {printf("\n Numero real:(%s) ",yytext);}
-{CADENA}		{printf("\n Cadena:(%s) ",yytext);}	
 {GUIONES}			{printf("\n Guion bajo:(%s) ",yytext);}
 {LLAVE_ABRE}		{printf("\n LLAVE_ABRE:(%s) ",yytext);}
 {LLAVE_CIERRA}	    {printf("\n LLAVE_CIERRA:(%s) ",yytext);}

@@ -1,6 +1,7 @@
 #include <studio.>
 int main()
 {
-    printf();
+    printf("Leo es pvto");
+    99.88
 }
 //hola
