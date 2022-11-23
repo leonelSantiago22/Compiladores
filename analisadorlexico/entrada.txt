@@ -5,3 +5,5 @@ int main()
     99.88
 }
 //hola
+int a,b; 
+a = a+b;
