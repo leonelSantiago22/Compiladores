@@ -835,10 +835,9 @@ YY_DECL
 		}
 
 	{
-#line 107 "analizador_lex.l"
+#line 105 "analizador_lex.l"
 
-
-#line 842 "lex.yy.c"
+#line 841 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -908,251 +907,251 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
-#line 109 "analizador_lex.l"
+#line 106 "analizador_lex.l"
 {printf("\n Salto de linea:(%s) ",yytext);nolin++;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 110 "analizador_lex.l"
+#line 107 "analizador_lex.l"
 
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 111 "analizador_lex.l"
+#line 108 "analizador_lex.l"
 {printf("ESPACIO: %s", yytext);}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 112 "analizador_lex.l"
+#line 109 "analizador_lex.l"
 {printf("\n COMENTARIO EN LINEA (%s)", yytext);}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 113 "analizador_lex.l"
+#line 110 "analizador_lex.l"
 {printf("\n palabra reservada if:(%s)",yytext); return(101);}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 114 "analizador_lex.l"
+#line 111 "analizador_lex.l"
 {printf("\n palabra reservada for:(%s)",yytext );return(102);}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 115 "analizador_lex.l"
+#line 112 "analizador_lex.l"
 {printf("\n palabra reservada while:(%s)",yytext);return(103);}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 116 "analizador_lex.l"
+#line 113 "analizador_lex.l"
 {printf("\n palabra reservada do: (%s)",yytext);return(104);}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 117 "analizador_lex.l"
+#line 114 "analizador_lex.l"
 {printf("\n palabra reservada switch:(%s)",yytext);return(105);}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 118 "analizador_lex.l"
+#line 115 "analizador_lex.l"
 {printf("\n palabra reservada case:(%s)",yytext);return(106);}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 119 "analizador_lex.l"
+#line 116 "analizador_lex.l"
 {printf("\n palabra reservada break:(%s)",yytext);return(107);}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 120 "analizador_lex.l"
+#line 117 "analizador_lex.l"
 {printf("\n palabra reservada continue:(%s)",yytext);return(108);}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 121 "analizador_lex.l"
+#line 118 "analizador_lex.l"
 {printf("\n palabra reservada else:(%s)",yytext);return(109);}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 122 "analizador_lex.l"
+#line 119 "analizador_lex.l"
 {printf("\n palabra reservada return:(%s)",yytext);return(110);}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 123 "analizador_lex.l"
+#line 120 "analizador_lex.l"
 {printf("\n palabra reservada extern:(%s)",yytext);return(111);}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 124 "analizador_lex.l"
+#line 121 "analizador_lex.l"
 {printf("\n palabra reservada printf:(%s)",yytext);return(112);}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 125 "analizador_lex.l"
+#line 122 "analizador_lex.l"
 {printf("\n palabra reservada vector:(%s",yytext);return(113);}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 126 "analizador_lex.l"
+#line 123 "analizador_lex.l"
 {printf("\n palabra reservada main:(%s)",yytext);return(115);}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 127 "analizador_lex.l"
+#line 124 "analizador_lex.l"
 {printf("\n tipo de dato int:(%s",yytext);return(116);}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 128 "analizador_lex.l"
+#line 125 "analizador_lex.l"
 {printf("\n tipo de dato float:(%s)",yytext);return(117);}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 129 "analizador_lex.l"
+#line 126 "analizador_lex.l"
 {printf("\n tipo de dato double:(%s)",yytext);return(118);}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 130 "analizador_lex.l"
+#line 127 "analizador_lex.l"
 {printf("\n tipo de dato char:(%s)",yytext);return(119);}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 131 "analizador_lex.l"
+#line 128 "analizador_lex.l"
 {printf("\n include palabra reservada %s", yytext); return(146);}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 132 "analizador_lex.l"
+#line 129 "analizador_lex.l"
 {printf("\n Identificador:(%s)",yytext);return(120);}
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 133 "analizador_lex.l"
+#line 130 "analizador_lex.l"
 {printf("\n Numero:(%s)",yytext);return(121);}
 	YY_BREAK
 case 26:
 /* rule 26 can match eol */
 YY_RULE_SETUP
-#line 134 "analizador_lex.l"
+#line 131 "analizador_lex.l"
 {printf("\n CADENA DE TEXTO:(%s) ",yytext);return(122);}
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 135 "analizador_lex.l"
+#line 132 "analizador_lex.l"
 {printf("\n GUIONES:(%s",yytext);return(123);}
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 136 "analizador_lex.l"
+#line 133 "analizador_lex.l"
 {printf("\n LLAVE_ABRE:(%s",yytext);return(124);}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 137 "analizador_lex.l"
+#line 134 "analizador_lex.l"
 {printf("\n LLAVE_CIERRA:(%s)",yytext);return(125);}
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 138 "analizador_lex.l"
+#line 135 "analizador_lex.l"
 {printf("\n PAR_ABRE:(%s) ",yytext);return(126);}
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 139 "analizador_lex.l"
+#line 136 "analizador_lex.l"
 {printf("\n PAR_CIERRA:(%s) ",yytext);return(127);}
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 140 "analizador_lex.l"
+#line 137 "analizador_lex.l"
 {printf("\n COR_ABRE:(%s) ",yytext);return(128);}
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 141 "analizador_lex.l"
+#line 138 "analizador_lex.l"
 {printf("\n COR_CIERRA:(%s) ",yytext);return(129);}
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 142 "analizador_lex.l"
+#line 139 "analizador_lex.l"
 {printf("\n COMA:(%s) ",yytext);return(131);}
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 143 "analizador_lex.l"
+#line 140 "analizador_lex.l"
 {printf("\n PUNTO:(%s) ",yytext);return(132);}
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 144 "analizador_lex.l"
+#line 141 "analizador_lex.l"
 {printf("\n PUNTO Y COMA:(%s) ",yytext);return(133);}
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 145 "analizador_lex.l"
+#line 142 "analizador_lex.l"
 {printf("\n DOS PUNTOS :(%s) ",yytext);return(134);}
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 146 "analizador_lex.l"
+#line 143 "analizador_lex.l"
 {printf("\n Operador +:(%s)",yytext);return(135);}
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 147 "analizador_lex.l"
+#line 144 "analizador_lex.l"
 {printf("\n Operador *:(%s)",yytext);return(137);}
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 148 "analizador_lex.l"
+#line 145 "analizador_lex.l"
 {printf("\n Operador /:(%s)",yytext);return(138);}
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 149 "analizador_lex.l"
+#line 146 "analizador_lex.l"
 {printf("\n Operador =:(%s)",yytext);return(139);}
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 150 "analizador_lex.l"
+#line 147 "analizador_lex.l"
 {printf("\n Operador Rel >:(%s",yytext);return(140);}
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 151 "analizador_lex.l"
+#line 148 "analizador_lex.l"
 {printf("\n Operador Rel <:(%s) ",yytext);return(141);}
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 152 "analizador_lex.l"
+#line 149 "analizador_lex.l"
 {printf("\n Operador Rel >=:(%s)",yytext);return(142);}
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 153 "analizador_lex.l"
+#line 150 "analizador_lex.l"
 {printf("\n Operador Rel <=:(%s)",yytext);return(143);}
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 154 "analizador_lex.l"
+#line 151 "analizador_lex.l"
 {printf("\n Operador Rel ==:(%s)",yytext);return(144);}
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 155 "analizador_lex.l"
+#line 152 "analizador_lex.l"
 {printf("\n Operador Rel !:(%s)",yytext, nolin);return(145);}
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 156 "analizador_lex.l"
+#line 153 "analizador_lex.l"
 {error++; printf("\nSe leyo el caracter no reconocido: (%s)\n",yytext, nolin);}
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 158 "analizador_lex.l"
+#line 155 "analizador_lex.l"
 ECHO;
 	YY_BREAK
-#line 1156 "lex.yy.c"
+#line 1155 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2169,7 +2168,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 158 "analizador_lex.l"
+#line 155 "analizador_lex.l"
 
 //
 
@@ -2317,4 +2316,3 @@ int main(int argc, char *argv[])
 	printf("\nNumero total de errores:     %d\n", error);
   return 0;
 }
-

@@ -6,13 +6,14 @@
 #define SLLIST
 #include <string.h>
 
+
 typedef struct node Node;
 typedef struct slinked_list Slinked_list;
 
 struct node {
 	char* lexema; //lexema encontrado 
 	//tener un nodo que contenga una lista 
-    int numlinea;
+    char*  numlinea;
 	Node *next;
     Node *prev;
 };
@@ -22,12 +23,13 @@ struct slinked_list {
 };
 
 Slinked_list *create_slinked_list();
-Node* create_node(char* lexema1,int linea);
-void insert_head(Node **head_ref,char* lexema ,int linea);
-void insert_end(Node **head_red,char* lexema , int linea);
+Node* create_node(char* lexema1,char* linea);
+void insert_head(Node **head_ref,char* lexema ,char* linea);
+void insert_end(Node **head_red,char* lexema ,char* linea);
 void display(Slinked_list *slinked_list);
 void destroy_slinked_list(Node *slinked_list);
 int buscar_id(Slinked_list *slinked_list,char *id_buscado);
+void enteroACaracter(int numero, char* bufer);
 int error=0;
 int nolin=1;
 int que_es;
@@ -170,21 +172,28 @@ Slinked_list* create_slinked_list(){
 /**
  * Crear un nodo para ser agregado a la lista
  * */
-Node* create_node(char* lexema,int linea)
+Node* create_node(char* lexema,char*  linea)
 {
     Node *new_node = (Node *) malloc (sizeof(Node));
+    memset(new_node->lexema, 0, 100);
 	new_node->lexema= (char *) malloc(sizeof(char));
+    memset(new_node->numlinea, 100, 200);
+    new_node->numlinea = (char *) malloc(sizeof(char));
+    strcat(new_node->lexema, new_node->numlinea);
 	//new_node->lexema=lexema;
 	strcpy(new_node->lexema,lexema);
-    new_node->numlinea=linea;
+    strcpy(new_node->numlinea, linea);
+    //new_node->numlinea=linea;
     new_node->next = NULL;
     new_node->prev = NULL;
+    free(new_node->lexema);
+    free(new_node->numlinea);
     return new_node;
 }
 /**
  * Insertar elemento en lista al inicio (head)
  **/
-void insert_head(Node **head_ref,char* lexema, int linea){
+void insert_head(Node **head_ref,char* lexema, char* linea){
     Node *new_node = create_node(lexema,linea);
     new_node->next = (*head_ref);
     (*head_ref) = new_node;
@@ -204,7 +213,7 @@ void destroy_slinked_list(Node *slinked_list){
  * Insertar elemento en lista al final
  * */
  //funciona
-void insert_end(Node **head_ref,char* lexema, int linea)
+void insert_end(Node **head_ref,char* lexema, char* linea)
 {
     if (*head_ref == NULL)
 	{
@@ -225,7 +234,7 @@ void display(Slinked_list* slinked_list){
     Node *node = slinked_list->head;
     while(node != NULL)
 	{ 
-		printf(" %d\t\t", node->numlinea);
+		printf(" %s\t\t", node->numlinea);
         printf("(%s)\n", node->lexema);
         node = node->next;
     }
@@ -253,6 +262,9 @@ int main(int argc, char *argv[])
 {
       int primer_id=0;
       char *lexema;
+      char aux;
+      char *numlinea;
+      char bufer[20];
  //freopen("./outfile.txt","w",stdout); // Redireccion de salida, los datos de salida se guardaran en el archivo out.txt 
  Slinked_list *slinked_list = create_slinked_list();
   if ((fuente=fopen(argv[1],"r"))!=NULL)
@@ -263,10 +275,14 @@ int main(int argc, char *argv[])
 		while (que_es!=0)
 		{   
 			printf("\t TOKEN:%d \t LEXEMA:%s LINEA: %d\n", que_es, yytext, nolin);
-            //strcpy(lexema,yytext);
+            //strcpy(l,yytext);
+            
+            enteroACaracter(nolin, bufer);
+            
+            printf("\n  numeroooo: (%s)",bufer);
             if(que_es==120 && primer_id==0 ){// si es un id y no esta repetido en la lista
                   //printf("INSERTO \n");
-                  insert_end(&slinked_list->head,yytext,nolin);
+                  insert_end(&slinked_list->head,yytext,numlinea);
                   primer_id=1;
             }
 
@@ -277,7 +293,7 @@ int main(int argc, char *argv[])
                      
                      //insert_end(&slinked_list->head,yytext,nolin);
                 }else{
-                    insert_end(&slinked_list->head,yytext,nolin);
+                    insert_end(&slinked_list->head,yytext,numlinea);
                 }
                 // primer_id=0;
             }
@@ -301,4 +317,8 @@ int main(int argc, char *argv[])
 	printf("\nNumero de lineas analizadas: %d", nolin);
 	printf("\nNumero total de errores:     %d\n", error);
   return 0;
+}
+
+void enteroACaracter(int numero, char* bufer){
+    sprintf(bufer, "%llu", numero);
 }
