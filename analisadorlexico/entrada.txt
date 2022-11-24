@@ -2,6 +2,7 @@
 int main()
 int a;
 char b;
+int j;
 {
     printf("hola mundo");
     99.88
@@ -9,4 +10,6 @@ char b;
 //hola
 int a,b; 
 a = a+b;
+j=6
+j=10
 @

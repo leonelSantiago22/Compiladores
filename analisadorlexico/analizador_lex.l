@@ -11,8 +11,10 @@ typedef struct slinked_list Slinked_list;
 
 struct node {
 	char* lexema; //lexema encontrado 
-	int numlinea;//atributo numero de linea del token
+	//tener un nodo que contenga una lista 
+    int numlinea;
 	Node *next;
+    Node *prev;
 };
 
 struct slinked_list {
@@ -25,11 +27,12 @@ void insert_head(Node **head_ref,char* lexema ,int linea);
 void insert_end(Node **head_red,char* lexema , int linea);
 void display(Slinked_list *slinked_list);
 void destroy_slinked_list(Node *slinked_list);
+int buscar_id(Slinked_list *slinked_list,char *id_buscado);
 int error=0;
 int nolin=1;
 int que_es;
 FILE *fuente;
-
+int id=120;
 #endif
 %}
 
@@ -97,10 +100,12 @@ PRINTF	 "printf"
 VECTOR	 "vector"
 CONST    "const"
 MAIN     "main"
+INCLUDE   "include"
 Error     .
 
 
 %%
+
 {nvalin}		{printf("\n Salto de linea:(%s) ",yytext);nolin++;}
 {e}
 {ESPACIO_M}		{printf("ESPACIO: %s", yytext);}
@@ -123,6 +128,7 @@ Error     .
 {FLOAT} 	  	{printf("\n tipo de dato float:(%s)",yytext);return(117);}
 {DOUBLE} 	  	{printf("\n tipo de dato double:(%s)",yytext);return(118);}
 {CHAR} 	    	{printf("\n tipo de dato char:(%s)",yytext);return(119);}
+{INCLUDE}       {printf("\n include palabra reservada %s", yytext); return(146);}
 {IDENTIFICADOR}	{printf("\n Identificador:(%s)",yytext);return(120);}
 {NUMERO}   {printf("\n Numero:(%s)",yytext);return(121);}
 {CADENA}        {printf("\n CADENA DE TEXTO:(%s) ",yytext);return(122);}
@@ -150,7 +156,7 @@ Error     .
 {Error} 		{error++; printf("\nSe leyo el caracter no reconocido: (%s)\n",yytext, nolin);}
 
 %%
-
+//
 
 /**
  * Crear la lista ligada simple, head = NULL
@@ -172,6 +178,7 @@ Node* create_node(char* lexema,int linea)
 	strcpy(new_node->lexema,lexema);
     new_node->numlinea=linea;
     new_node->next = NULL;
+    new_node->prev = NULL;
     return new_node;
 }
 /**
@@ -213,6 +220,7 @@ void insert_end(Node **head_ref,char* lexema, int linea)
 	}
     last->next = new_node;
 }
+
 void display(Slinked_list* slinked_list){
     Node *node = slinked_list->head;
     while(node != NULL)
@@ -223,25 +231,63 @@ void display(Slinked_list* slinked_list){
     }
 }
 
+int buscar_id(Slinked_list* slinked_list, char* id_buscado){
+    Node *actual = slinked_list->head;
+    /*Node * actual = (Node *) malloc(sizeof(Node));//nodo auxiliar 
+    actual=primero;
+    int encontrado;
+    int iteracion=0;
+  */
+    while(actual != NULL){ 
+          //printf("INGRESO A BUSQUEDA %d, lexema buscando %s\n",iteracion, actual->lexema);
+		if(strcmp(actual->lexema,id_buscado)==0){
+            return 1;
+        }
+        actual=actual->next;  
+    }
+    printf("Salio de la busqueda");
+    return 0;
+}
 
 int main(int argc, char *argv[])
 {
+      int primer_id=0;
+      char *lexema;
  //freopen("./outfile.txt","w",stdout); // Redireccion de salida, los datos de salida se guardaran en el archivo out.txt 
  Slinked_list *slinked_list = create_slinked_list();
   if ((fuente=fopen(argv[1],"r"))!=NULL)
   {
+        //int size = 1000;
         yyin=fuente;
         que_es=yylex();
 		while (que_es!=0)
 		{   
-			char *lexema;
-			lexema = yytext;
 			printf("\t TOKEN:%d \t LEXEMA:%s LINEA: %d\n", que_es, yytext, nolin);
-			insert_end(&slinked_list->head,yytext,nolin);
+            //strcpy(lexema,yytext);
+            if(que_es==120 && primer_id==0 ){// si es un id y no esta repetido en la lista
+                  //printf("INSERTO \n");
+                  insert_end(&slinked_list->head,yytext,nolin);
+                  primer_id=1;
+            }
+
+            if(que_es==120 && primer_id==1){
+               int repetido_id=buscar_id(slinked_list,yytext);
+                if(repetido_id==1){
+                     printf("hay un identificador repetido \n");
+                     
+                     //insert_end(&slinked_list->head,yytext,nolin);
+                }else{
+                    insert_end(&slinked_list->head,yytext,nolin);
+                }
+                // primer_id=0;
+            }
+           
+                
 			que_es=yylex();//insertar en la tabla 
 			//getchar();
-		}
+		
 	}
+  }
 	else{
 		   printf("\nError, No se puede abrir archivo");
 		   exit(1);
