@@ -1,5 +1,7 @@
-#include <studio.>
+#include <studio.h>
 int main()
+int a;
+char b;
 {
     printf("hola mundo");
     99.88
@@ -7,3 +9,4 @@ int main()
 //hola
 int a,b; 
 a = a+b;
+@

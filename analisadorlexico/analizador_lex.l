@@ -40,6 +40,7 @@ FILE *fuente;
 DIGITO			[0-9]+
 LETRA		    [a-zA-Z]
 ESPACIO			["\0"]
+ESPACIO_M {ESPACIO}+
 INICOMENTARIO	["/*"]
 FINCOMENTARIO	["*/"]
 GUIONBAJO		[_]
@@ -102,7 +103,7 @@ Error     .
 %%
 {nvalin}		{printf("\n Salto de linea:(%s) ",yytext);nolin++;}
 {e}
-{ESPACIO}		{printf("ESPACIO: JIJI %s", yytext);}
+{ESPACIO_M}		{printf("ESPACIO: %s", yytext);}
 {COMENTARIO}	{printf("\n COMENTARIO EN LINEA (%s)", yytext);}
 {IF}        	{printf("\n palabra reservada if:(%s)",yytext); return(101);}
 {FOR}	      	{printf("\n palabra reservada for:(%s)",yytext );return(102);}
@@ -165,9 +166,10 @@ Slinked_list* create_slinked_list(){
  * */
 Node* create_node(char* lexema,int linea)
 {
-    Node *new_node = (Node *) malloc (sizeof(8 * sizeof(char)));
-	new_node->lexema=lexema;
-	//strcpy(new_node->lexema,lexema);
+    Node *new_node = (Node *) malloc (sizeof(Node));
+	new_node->lexema= (char *) malloc(sizeof(char));
+	//new_node->lexema=lexema;
+	strcpy(new_node->lexema,lexema);
     new_node->numlinea=linea;
     new_node->next = NULL;
     return new_node;
@@ -199,13 +201,11 @@ void insert_end(Node **head_ref,char* lexema, int linea)
 {
     if (*head_ref == NULL)
 	{
-		printf("INSERTO HEAD");
-		printf("LEXEMA HEAD %s",lexema);
         insert_head(head_ref,lexema,linea);
         return;
     }
     Node *new_node = create_node(lexema,linea);
-	printf("\nLEXEMAAA: %s", new_node->lexema);
+	//printf("\nLEXEMAAA: %s", new_node->lexema);
     Node *last = *head_ref;
     while(last->next != NULL)
 	{
@@ -217,8 +217,8 @@ void display(Slinked_list* slinked_list){
     Node *node = slinked_list->head;
     while(node != NULL)
 	{ 
-		printf("numLinea : %d ", node->numlinea);
-        printf("lexema   : (%s) \n", node->lexema);
+		printf(" %d\t\t", node->numlinea);
+        printf("(%s)\n", node->lexema);
         node = node->next;
     }
 }
@@ -239,14 +239,17 @@ int main(int argc, char *argv[])
 			printf("\t TOKEN:%d \t LEXEMA:%s LINEA: %d\n", que_es, yytext, nolin);
 			insert_end(&slinked_list->head,yytext,nolin);
 			que_es=yylex();//insertar en la tabla 
-			getchar();
+			//getchar();
 		}
-		display(slinked_list);
 	}
 	else{
 		   printf("\nError, No se puede abrir archivo");
 		   exit(1);
-		  }
+		}
+	printf("NumLinea \t lexema\n");
+	display(slinked_list);
+	freopen("./outfile.txt","w",stdout);
+	display(slinked_list);
     fclose(fuente);
 	//destroy_slinked_list(slinked_list);
 	printf("\nNumero de lineas analizadas: %d", nolin);
