@@ -5,24 +5,27 @@
 #ifndef SLLIST
 #define SLLIST
 #include <string.h>
+//list of list C 
 
-typedef struct node Node;
-typedef struct slinked_list Slinked_list;
 
-struct node {
-	char* lexema; //lexema encontrado 
-	//tener un nodo que contenga una lista 
-    int numlinea;
-	Node *next;
-    Node *prev;
-};
+typedef struct 
+{
+     int numlinea;
+     nodo *lineas;
+}linea;
 
-struct slinked_list {
-	Node *head;
-};
+
+typedef struct 
+{
+    char identificador*;
+    struct nodo *next;
+}nodo;
+
 
 Slinked_list *create_slinked_list();
-Node* create_node(char* lexema1,int linea);
+listaparalosidentificadores *crear_lista_por_lexema();
+Lexema* create_node(char* lexema);
+LineasporIdentificador* create_node_identificador(int linea);
 void insert_head(Node **head_ref,char* lexema ,int linea);
 void insert_end(Node **head_red,char* lexema , int linea);
 void display(Slinked_list *slinked_list);
@@ -155,96 +158,6 @@ Error     .
 %%
 //
 
-/**
- * Crear la lista ligada simple, head = NULL
- * */
-Slinked_list* create_slinked_list(){
-    Slinked_list *slinked_list = (Slinked_list *) malloc (sizeof(Slinked_list));
-    slinked_list->head = NULL;
-    return slinked_list;
-}
-
-/**
- * Crear un nodo para ser agregado a la lista
- * */
-Node* create_node(char* lexema,int linea)
-{
-    Node *new_node = (Node *) malloc (sizeof(Node));
-	new_node->lexema= (char *) malloc(sizeof(char));
-	//new_node->lexema=lexema;
-	strcpy(new_node->lexema,lexema);
-    new_node->numlinea=linea;
-    new_node->next = NULL;
-    new_node->prev = NULL;
-    return new_node;
-}
-/**
- * Insertar elemento en lista al inicio (head)
- **/
-void insert_head(Node **head_ref,char* lexema, int linea){
-    Node *new_node = create_node(lexema,linea);
-    new_node->next = (*head_ref);
-    (*head_ref) = new_node;
-	//new_node->next = NULL;
-}
-
-void destroy_slinked_list(Node *slinked_list){
-    Node *node = slinked_list;
-    while(node != NULL){
-        Node *temp = node; 
-        node = node->next;
-        free(temp);
-    }   
-    free(node); 
-}
-/**
- * Insertar elemento en lista al final
- * */
- //funciona
-void insert_end(Node **head_ref,char* lexema, int linea)
-{
-    if (*head_ref == NULL)
-	{
-        insert_head(head_ref,lexema,linea);
-        return;
-    }
-    Node *new_node = create_node(lexema,linea);
-
-    Node *last = *head_ref;
-    while(last->next != NULL)
-	{
-        last = last->next;
-	}
-    last->next = new_node;
-}
-
-void display(Slinked_list* slinked_list){
-    Node *node = slinked_list->head;
-    while(node != NULL)
-	{ 
-		printf(" %d\t\t", node->numlinea);
-        printf("(%s)\n", node->lexema);
-        node = node->next;
-    }
-}
-
-int buscar_id(Slinked_list* slinked_list, char* id_buscado){
-    Node *actual = slinked_list->head;
-    /*Node * actual = (Node *) malloc(sizeof(Node));//nodo auxiliar 
-    actual=primero;
-    int encontrado;
-    int iteracion=0;
-  */
-    while(actual != NULL){ 
-          //printf("INGRESO A BUSQUEDA %d, lexema buscando %s\n",iteracion, actual->lexema);
-		if(strcmp(actual->lexema,id_buscado)==0){
-            return 1;
-        }
-        actual=actual->next;  
-    }
-    printf("Salio de la busqueda");
-    return 0;
-}
 
 int main(int argc, char *argv[])
 {
