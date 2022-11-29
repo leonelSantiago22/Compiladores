@@ -2352,7 +2352,7 @@ list_t *lookup_scope(char *name, int scope){ /* regresa el simbolo si se encuent
 	return l; // no se encontro NULL
 }
 
-void hide_scope(){ /* hide the current scope */
+void hide_scope(){ /*ocultar el alcance actual */
 	if(cur_scope > 0) cur_scope--;
 }
 
@@ -2360,7 +2360,7 @@ void incr_scope(){ /* ir al siguiente alcance */
 	cur_scope++;
 }
 
-/* print to stdout by default */ 
+/* imprimir por default stdout  */ 
 void symtab_dump(FILE * of){  
   int i;
   fprintf(of,"------------ ------ ------------\n");
@@ -2389,7 +2389,7 @@ void symtab_dump(FILE * of){
 				else if (l->inf_type  == STR_TYPE) 	   fprintf(of,"%-7s","string");
 				else fprintf(of,"%-7s","");
 			}
-			else fprintf(of,"%-7s",""); // if UNDEF or 0
+			else fprintf(of,"%-7s",""); // si es indefinido o 0
 			while (t != NULL){
 				fprintf(of,"%4d ",t->lineno);
 			t = t->next;
@@ -2412,18 +2412,20 @@ void yyerror(char *message){
 }
 
 int main(int argc, char *argv[]){
-	// initialize symbol table
+	// inicializador de la tabla de simbolos
 	init_hash_table();
 
-	// open input file
+	// abrir carpeta de ingreso
 	yyin = fopen(argv[1], "r");
 	
-	// lexical analysis
+	// analisis lexico
 	yylex();
 	fclose(yyin);
 	
-	// symbol table dump
-	yyout = fopen("symtab_dump.out", "w");
+	//mandamos al archivo la tabla de simbolos
+    //leonel santiuago rosas 
+
+	yyout = fopen("tabladesimbolos.out", "w");
 	symtab_dump(yyout);
 	fclose(yyout);	
 	
