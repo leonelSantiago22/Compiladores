@@ -1,17 +1,12 @@
-include <studio.h>
+
 int main()
-int a;
-include
-char b;
-int j;
 {
-    printf("hola mundo");
-    99.88
+    int c;
+    int b;
+    c =3 
+    b = c
+    if(c == b)
+    {
+        c = c+b
+    }
 }
-@
-//hola
-int a,b; 
-a = a+b;
-j=6
-j=10
-include

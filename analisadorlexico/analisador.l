@@ -123,6 +123,8 @@ CADENA 			\"[^"]*\"
 NUMERO_REAL2	{NUMERO_REAL}[eE][\+\-]?{DIGITO}
 NUMERO 			{DIGITO}|{NUMERO_REAL}|{NUMERO_REAL2}
 OP_MAS  		"+"
+OP_PLUS 		"++"
+OP_MINUS		"--"
 OP_MENOS  		"-"
 OP_POR  		"*"
 OP_DIV 			["/"]
@@ -133,6 +135,7 @@ OP_MAYORIGUAL	">="
 OP_MENORRIGUAL	"<="
 OP_COPMENOR		"=="
 OP_NEGACION		"!"
+TIPO_SCANF		(%(c|s|f|d))
 /*tipos*/
 INT 	"int"
 FLOAT 	"float"
@@ -151,6 +154,7 @@ ELSE	 "else"
 RETURN	 "return"
 EXTERN	 "extern"
 PRINTF	 "printf"
+SCANF 	 "scanf"
 VECTOR	 "vector"
 CONST    "const"
 MAIN     "main"
@@ -223,6 +227,7 @@ INCLUDE   "include"
 {OP_MENORRIGUAL} {printf("\n Operador Rel <=:(%s)",yytext);}
 {OP_COPMENOR}	 {printf("\n Operador Rel ==:(%s)",yytext);}
 {OP_NEGACION}	 {printf("\n Operador Rel !:(%s)",yytext);}
+{TIPO_SCANF} 	{printf("\n Tipo de scan(%s)", yytext);}
 
 [ \t\r\f]+			/* iGNORAR ESPACIOS EN BLANCOS*/
 .				{ yyerror("Caracter no reconozido "); }

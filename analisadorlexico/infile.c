@@ -1,8 +1,16 @@
 
 #include <stdio.h>
 //inicio del programa
+int a__b;
 int main()
 {
+    0.6e+3
+    4
+    5..6
+    78.9
+    6.
+    78.9e+7.
+    3.4e+3
   //int c*b
   //inicio del main
   int a,b,c;
@@ -302,3 +310,7 @@ int menu()
     return opc;
 }
 int holiii;
+@
+#
+!
+?
