@@ -1,0 +1,16 @@
+
+#include<stdio>
+
+int main(){
+  int b,c,d;
+  char v;
+  a=7;
+   
+   @
+
+   if(c==m){
+          printf("%i",a);
+   }
+@
+ return ;
+}

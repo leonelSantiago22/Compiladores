@@ -124,7 +124,7 @@ INCLUDE   "include"
 {DOUBLE} 	  	{return(Double);}
 {CHAR} 	    	{return(Char);}
 {INCLUDE}       {return(PR_INCLUDE); }
-{ID} 			{return(id);}
+{ID} 			{return(id); printf("ID %S", yytext);}
 {ICONST} 		{ return(Iconst); }
 {FCONST} 		{return(Fconst); }
 {CCONST} 		{ return(Cconst);}
