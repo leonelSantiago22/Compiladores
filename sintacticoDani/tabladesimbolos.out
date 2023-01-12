@@ -1,10 +1,14 @@
 ------------ ------ ------------
 Name         Type   Line Numbers
 ------------ ------ -------------
-a            undef     7   12 
+0            undef    17   21 
+3            undef    17 
+9            undef    11 
+a            undef     7    8   12   14   18 
 b            undef     5    7 
 c            undef     5   11 
 d            undef     5 
-m            undef    11 
+i            undef    17   17   17 
 v            undef     6 
 stdio        undef     2 
+7+90         undef     8 

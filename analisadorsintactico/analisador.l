@@ -132,7 +132,7 @@ INCLUDE   "include"
 
 {OP_PLUS}     { return(Inc);}
 {OP_MINUS}    { return(Dec);}
-{NUMERO}      {return(numero);}
+{NUMERO}      { printf("Numero detectado: %s", yytext);return(numero);}
 {CADENA}        {return(cadena);}
 {GUIONES}		{return(guion);}
 {LLAVE_ABRE}	{return(llave_a);}

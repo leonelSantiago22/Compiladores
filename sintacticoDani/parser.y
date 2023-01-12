@@ -8,7 +8,10 @@
 	extern int lineno;
 	extern int yylex();
 	void yyerror();
-%}
+	#ifdef YYDEBUG
+  	yydebug = 1;
+	#endif
+%}	
 
 /* YYSTYPE union */
 %union{
@@ -34,7 +37,7 @@ Programa:  INCLUDES FuncionPrincipal
 INCLUDES: GATO PR_INCLUDE op_menor  id  op_mayor  ;
 
 
-FuncionPrincipal: tipo_int PR_MAIN par_a par_c llave_a lista_declaraciones lista_proposiciones PR_RETURN punto_coma llave_c
+FuncionPrincipal: tipo_int PR_MAIN par_a par_c llave_a lista_declaraciones lista_proposiciones PR_RETURN numero punto_coma llave_c
 	;
 
 lista_declaraciones: lista_declaraciones declaraciones 
@@ -63,6 +66,7 @@ proposiciones : asignacion punto_coma
 
 asignacion : id  op_igual expresion  ;
 
+
 expresion : expresion  op_mas  termino 
  | expresion  op_menos termino 
  | expresion  op_por termino 
@@ -79,7 +83,7 @@ expresion_logico : expresion_logico  op_dosigual  termino
   | termino
   ;
 
- termino : id | numero  
+ termino : numero  | id
   ;
  
 
@@ -98,7 +102,7 @@ ciclos_repeticion: PR_FOR par_a exp_id par_c  bloque_instruccion
     | error par_c 
    ;
 
-exp_id : asignacion punto_coma expresion_logico punto_coma  id ic_dc 
+exp_id : asignacion punto_coma expresion_logico punto_coma id ic_dc 
 
  ;
 
@@ -122,9 +126,10 @@ ic_dc: Inc
  | Dec 
  ; 
 %%
+
 void yyerror ()
 {
-  	printf(" \n ERROR sintactico en la linea \t %d \n ", lineno);
+  	printf(" \n ERROR SINTACTICO!!! en la linea \t %d \n ", lineno);
 }
 int main (int argc, char *argv[]){
 

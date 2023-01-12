@@ -106,6 +106,7 @@ INCLUDE   "include"
 
 {e}				
 {nvalin}		{lineno++;}
+{NUMERO}      	{insert(yytext, strlen(yytext), UNDEF, lineno);return numero;}
 {OP_MENOS}      {return op_menos; }
 {IF}        	{return PR_IF; }
 {FOR}	      	{return PR_FOR;}
@@ -134,7 +135,9 @@ INCLUDE   "include"
 {AMPERSON}		{return amperson ;}
 {OP_PLUS}     { return Inc ;}
 {OP_MINUS}    { return Dec ;}
-{NUMERO}      {return numero ;}
+{NUMERO_REAL2} 	{return numero;}
+{NUMERO_REAL} 	{return numero;}
+{DIGITO} 		{return numero;}
 {CADENA}        {return cadena ;}
 {LLAVE_ABRE}	{return llave_a ;}
 {LLAVE_CIERRA}	{return llave_c ;}
