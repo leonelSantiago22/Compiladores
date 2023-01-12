@@ -1048,7 +1048,7 @@ YY_RULE_SETUP
 case 28:
 YY_RULE_SETUP
 #line 129 "lex.l"
-{printf("\nID %s\n", yytext); insert(yytext, strlen(yytext), UNDEF, lineno); return id;}
+{insert(yytext, strlen(yytext), UNDEF, lineno); return id;}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP

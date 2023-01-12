@@ -4,9 +4,9 @@
 int main(){
   int b,c,d;
   char v;
-  a=7;
+  a = b;
    
-   @
+   
 
    if(c==m){
           printf("%i",a);
