@@ -1538,7 +1538,7 @@ int main (int argc, char *argv[]){
 	yylex();
 	fclose(yyin);
 	
-	printf("Parsing Terminado!");
+	printf("Parsing Terminado! %d",lineno);
 	// symbol table dump
 	yyout = fopen("tabladesimbolos.out", "w");
 	symtab_dump(yyout);

@@ -143,7 +143,9 @@ int main (int argc, char *argv[]){
 	yylex();
 	fclose(yyin);
 	
-	printf("Parsing Terminado!");
+	// EL LEO SE LA COME Y EL SOCRU TAMBIEN
+
+	printf("Parsing Terminado! %d",lineno);
 	// symbol table dump
 	yyout = fopen("tabladesimbolos.out", "w");
 	symtab_dump(yyout);
