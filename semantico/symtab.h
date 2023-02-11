@@ -67,3 +67,6 @@ void hide_scope(); // hide the current scope
 void incr_scope(); // go to next scope
 void symtab_dump(FILE *of); // dump file
 
+// Type Functions
+void set_type(char *name, int st_type, int inf_type); // set the type of an entry (declaration)
+int get_type(char *name); // get the type of an entry

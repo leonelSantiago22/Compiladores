@@ -52,7 +52,7 @@
 }
 
 /* token definition */
-%token<val> CHAR INT FLOAT DOUBLE IF ELSE WHILE FOR CONTINUE BREAK VOID RETURN
+%token<val> CHAR INT FLOAT DOUBLE IF ELSE WHILE FOR CONTINUE BREAK VOID RETURN MAIN
 %token<val> ADDOP MULOP DIVOP INCR OROP ANDOP NOTOP EQUOP RELOP
 %token<val> LPAREN RPAREN LBRACK RBRACK LBRACE RBRACE SEMI COMMA ASSIGN REFER
 %token <symtab_item> ID
@@ -96,10 +96,11 @@
 
 %%
 
-program: 
-	declarations { ast_traversal($1); }
-	statements   { ast_traversal($3); }
-	RETURN SEMI functions_optional { ast_traversal($7); }
+program: int_type MAIN LPAREN RPAREN LBRACE
+	declarations { ast_traversal($6); }
+	statements   { ast_traversal($8); }
+	RBRACE
+
 ;
 
 /* declarations */
@@ -147,7 +148,7 @@ type: INT  		{ $$ = INT_TYPE;   }
 	| DOUBLE 	{ $$ = REAL_TYPE;  }
 	| VOID 		{ $$ = VOID_TYPE;  }
 ;
-
+int_type : INT;
 names: names COMMA variable
 	{
 		add_to_names($3);
@@ -549,74 +550,12 @@ call_param:
 	}	
 ;
 
-/* functions */
-functions_optional: 
-	functions
-	{
-		$$ = $1;
-	}
-	| /* empty */
-	{
-		$$ = NULL;
-	}
-;
 
-functions: 
-	functions function
-	{
-		AST_Node_Func_Declarations *temp = (AST_Node_Func_Declarations*) $1;
-		$$ = new_func_declarations_node(temp->func_declarations, temp->func_declaration_count, $2);
-	}
-	| function
-	{
-		$$ = new_func_declarations_node(NULL, 0, $1);
-	}
-;
 
-function: { incr_scope(); } function_head function_tail
-{ 
-	/* TO DO: perform revisit */
-	// revisit(temp_function->entry->st_name);
-	
-	hide_scope();
-	$$ = (AST_Node *) temp_function;
-} 
-;
 
-function_head: { declare = 1; } return_type ID LPAREN
-	{ 
-		declare = 0;
-		
-		AST_Node_Ret_Type *temp = (AST_Node_Ret_Type *) $2;
-		temp_function = (AST_Node_Func_Decl *) new_ast_func_decl_node(temp->ret_type, temp->pointer, $3);
-		temp_function->entry->st_type = FUNCTION_TYPE;
-		temp_function->entry->inf_type = temp->ret_type;
-	}
-	parameters_optional RPAREN
-	{
-		if($6 != NULL){
-			AST_Node_Decl_Params *temp = (AST_Node_Decl_Params *) $6;
-			
-			temp_function->entry->parameters = temp->parameters;
-			temp_function->entry->num_of_pars = temp->num_of_pars;
-		}
-		else{
-			temp_function->entry->parameters = NULL;
-			temp_function->entry->num_of_pars = 0;
-		}		
-	}
-;
 
-return_type:
-	type
-	{
-		$$ = new_ast_ret_type_node($1, 0);
-	}
-	| type pointer
-	{
-		$$ = new_ast_ret_type_node($1, 1);
-	}
-;
+
+
 
 parameters_optional: 
 	parameters

@@ -1,6 +1,7 @@
 // program: declarations statements RETURN SEMI functions
 // main function (declarations statements)
 // declarations
+int main(){
 int i;                    // simple variable
 char c = 'c';             // one with init
 double val = 2.5, res[6]; // two variables, one with init and one array
@@ -13,16 +14,10 @@ for(i = 0; i < 10; i++){ // for
 	}
 	else if(i == 5){
 		i = 2 * i;
-		val = func1();
-		*p = add(val, i);
-		print(res[i]);
 		print("\n");
 		continue;
 	}
 	else{
-		*p = add(val, i);
-    	val = res[i];
-   	 	print(res[i]);
     	print("\n");
     	p = p + 1;
 	}
@@ -39,23 +34,7 @@ while(i < 12){ // while
 	i++;
 }
 print("\n");
-return; /* RETURN SEMI */
+
 // other functions (functions)
-int func1(){ 		/* without parameters */
-	// statements
-	return 5;
-}
-void func2(char c){ /* with one parameter */
-	// declarations
-	char *s;
-	// statements
-	*s = c;
-	print(*s);
-}
-double add (double a, int b){  /* with two parameters */
-    // declarations
-    double res;
-    // statements
-    res = a + b + (-5);
-    return res;
+
 }

@@ -115,3 +115,29 @@ void symtab_dump(FILE * of){
   }
 }
 
+void set_type(char *name, int st_type, int inf_type){ // set the type of an entry (declaration)
+	/* lookup entry */
+	list_t *l = lookup(name);
+	
+	/* set as "main" type */
+	l->st_type = st_type;
+	
+	/* if array, pointer or function */
+	if(inf_type != UNDEF){
+		l->inf_type = inf_type;
+	}
+}
+
+int get_type(char *name){ // get the type of an entry
+	/* lookup entry */
+	list_t *l = lookup(name);
+	
+	/* if "simple" type */
+	if(l->st_type == INT_TYPE || l->st_type == REAL_TYPE || l->st_type == CHAR_TYPE){
+		return l->st_type;
+	}
+	/* if array, pointer or function */
+	else{
+		return l->inf_type;
+	}
+}

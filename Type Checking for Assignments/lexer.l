@@ -52,8 +52,7 @@ STRING		\"{print}*\"
 "break"|"BREAK"			{ return BREAK; }
 "void"|"VOID"			{ return VOID; }
 "return"|"RETURN"		{ return RETURN; }
-"main"|"MAIN"           { return MAIN;}
-
+"main"|"MAIN"	           {return MAIN;}
 
 "+"					    { yylval.val.ival = ADD; return ADDOP; }
 "-"					    { yylval.val.ival = SUB; return ADDOP; }

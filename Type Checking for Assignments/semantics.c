@@ -262,11 +262,10 @@ void type_error(int type_1, int type_2, int op_type){ /* print type error */
 			break;
 		default: 
 			fprintf(stderr, "Error in operator selection!\n");
-			exit(1);	
+		
 	}
 	
 	/* line */
 	fprintf(stderr, " in line %d\n", lineno);
 	
-	exit(1);
 }

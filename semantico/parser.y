@@ -1,5 +1,7 @@
 %{
 	#include "symtab.c"
+	#include "symtab.h"
+	#include "parser.tab.h"
 	#include <stdio.h>
 	#include <stdlib.h>
 	#include <string.h>
@@ -28,6 +30,10 @@
 %token guion llave_a llave_c par_a par_c cor_a cor_c coma punto punto_coma dos_puntos
 %token id  Iconst numero Cconst  String  cadena  Fconst  GATO  
 
+%type <data_type> tipo
+%type <data_type> tipo_int
+%type <node> lista_declaraciones declaraciones
+%type <node> lista_identificadores
 %start Programa
 
 %%
@@ -41,13 +47,16 @@ FuncionPrincipal: tipo_int PR_MAIN par_a par_c llave_a lista_declaraciones lista
 	;
 
 lista_declaraciones: lista_declaraciones declaraciones 
- | declaraciones  
+ 					| declaraciones  
      ;
 
-declaraciones : tipo lista_identificadores punto_coma 
-				
-               | error punto_coma 
+declaraciones : tipo lista_identificadores punto_coma {if(lookup($2)){
+	                                                           set_type($2, $1, UNDEF);
+}
+                                                        }
+
 			    ;
+
 
 lista_identificadores : lista_identificadores coma id  
  | id 
@@ -116,12 +125,13 @@ bloque_instruccion : llave_a lista_proposiciones llave_c
  ; 
 
 tipo :  tipo_int 
-        |Float 
-		| Char 
-		|Double 
+        |Float 	 {$$=Float;}
+		| Char 	 {$$=Char;}
+		|Double  {$$=Double;};
 ;
 
-tipo_int : Int; 
+tipo_int : Int{$$=Int;};
+;
 
 ic_dc: Inc 
  | Dec 

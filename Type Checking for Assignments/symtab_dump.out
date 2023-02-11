@@ -1,6 +1,7 @@
 ------------ -------------- ------ ------------
 Name         Type           Scope  Line Numbers
 ------------ -------------- ------ ------------
-i            int              0     3 
-val          real             0     4    6    7 
-res          real             0     4    7 
+i            int              0     4    8    8    8   11   13   15   16   16 
+val          real             0     5 
+res          real             0     5 
+print        undef            0     9   17   21 
