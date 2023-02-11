@@ -153,7 +153,7 @@ INCLUDE   "include"
 {OP_MENOR}		 {return(op_menor);}
 {OP_MAYORIGUAL}	 {return(op_mayorigual);}
 {OP_MENORRIGUAL} {return(op_menorigual);}
-{OP_COPMENOR}	 {return(op_dosigual;}
+{OP_COPMENOR}	 {return(op_dosigual);}
 {OP_NEGACION}	 {return(op_negacion);}
 {TIPO_SCANF} 	{return(tipos_scanf);}
 

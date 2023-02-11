@@ -88,7 +88,6 @@ void symtab_dump(FILE *of); // papelera de carpetas
 %}
 
 %x ML_COMMENT
-
 DIGITO			[0-9]+
 LETRA		    [a-zA-Z]
 alnum 		{LETRA}|{DIGITO}
@@ -142,6 +141,7 @@ FLOAT 	"float"
 DOUBLE 	"double"
 CHAR 	"char"
 GATO	"#"
+
 /* Palabras reservadas */
 IF  	 "if"
 FOR		 "for"
@@ -160,7 +160,8 @@ VECTOR	 "vector"
 CONST    "const"
 MAIN     "main"
 INCLUDE   "include"
-
+STDLIB 			"stdlib"
+STUDIO			"studio.h"
 %%
 
 "//".*					{ printf("Cometario en la linea(%d)\n", lineno); } 
@@ -179,6 +180,8 @@ INCLUDE   "include"
 {IF}        	{printf("%s ",yytext); }
 {FOR}	      	{printf("%s ",yytext );}
 {WHILE}     	{printf("%s ",yytext);}
+{STDLIB}		{printf("biblioteca ");}
+{STUDIO}		{printf("biblioteca ");}
 {NUMERO}   		{printf("numero ",yytext);}
 {SWITCH}    	{printf("%s ",yytext);}
 {DO}        	{printf("%s ",yytext);}

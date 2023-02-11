@@ -1,5 +1,8 @@
-#include <stdlib>
-int main()
+include <studio.h>
+begin
+ main()
 {
-    10
+    @
+    int a=10
+
 }

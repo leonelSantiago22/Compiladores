@@ -47,15 +47,16 @@ class Stack:
 
 # # EL LEO SE LA COME
 
-def usodelapila(valor,token):
-    pila = Stack()
-    if valor == 0:
+def usodelapila(pila,valor,token):
+    #print(valor,token)
+    if valor == 1  :
         print("se inserto:",token)
         pila.insert(token)
-    elif valor == 1:
-         pila.pop_stack()
+    elif valor == 2:
+        print("se hizo pop")
+        pila.pop_stack()
     else:
-        return
+        return 
         
         
 
@@ -116,7 +117,7 @@ operators = {
     'double':52,
     'int': 53,
     '++':54,
-    'bibliotecas':55,
+    'biblioteca':55,
     '--':56,
     'tipos_scanf':57,
 }
@@ -191,41 +192,42 @@ producciones = {
     'includesbeginfuncionprincipal':'programa',
     '#pr_include<bibliotecas>':'includes',
     'intmain(){lista_declaracioneslista_proposicionesrreturn}':'funcionprincipal',
-    
-}
-archivo = open("outfile.txt", "r")
-lineas = archivo.read()
-aux = str(lineas).split(' ')
-print(aux)
-print(len(aux))
-i = 1 
-p = Stack();
-p.insert(1);
-print(p.items)
-p.insert('aux')
-print(p.items)
-H = hash_table()
-H.Insert_hash("A")
-H.Insert_hash("B")
-H.Insert_hash("C")
+    'declaraciones':'lista-declaraciones',
+    'lista-declaracionesdeclaraciones':'lista-declaraciones',
+    'id':'lista-identificadores',
+    'listaidentificadoresid':'lista-identificadores',
+    'asignmacion':'proposiciones',
+    'lectura':'proposiciones',
+    'cliclo-repeticion':'proposiciones',
+    'escritura':'proposiciones',
+    'estructura-control':'proposiciones',
+    'identificador=expresion;':'asignacion',
+    'expresionoperador-aritmeticoexpresion':'expresion',
+    'identificador':'expresion',
+    'numero':'expresion',
+    'scanf("tipos-scanf",&identificador)':'lectura'
+}  
 
-print(H.Search_hash("B"))
-
-
-''' 
-for i in range(1,len(aux),1):
-    print(aux[i-1], aux[i])
-
-lineas = archivo.readlines()
-for linea in lineas:
-    palabra = linea.split("\n")
-    aux = palabra[0]
+def main():
+    archivo = open("outfile.txt", "r")
+    lineas = archivo.read()
+    aux = str(lineas).split(' ')
     print(aux)
-    if aux in operators:
-        valor  = matrix[(operators[aux]-1)][(operators[aux]-1)]
-        usodelapila(valor,aux)
-    else:
-        print("no existe")
+    #print(len(aux))
+    pila = Stack()
+
+    for i in range(1,len(aux),1):
+        if aux[i] and aux[i-1] in operators :
+            print(aux[i-1], aux[i])
+            valor2 = operators[aux[i]] -1
+            valor1 = operators[aux[i-1]] -1
+            #print(valor2,valor1)
+            print(matrix[valor1][valor2])
+            valorquesesacadelamatrix = matrix[valor1][valor2]
+            usodelapila(pila,valorquesesacadelamatrix,aux[i-1])
+            print(pila.items)
     
-#print(archivo.read())
-'''
+    print("paser finish!!")
+            
+
+main()

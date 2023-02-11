@@ -1,1 +1,1 @@
-# include < id > int main ( ) { numero } 
+include < biblioteca > begin main ( ) { int id = numero return ( 
