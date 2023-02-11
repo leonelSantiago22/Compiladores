@@ -188,7 +188,7 @@ array: /* for now only one-dimensional arrays */
 	{
 		// if declaration then error!
 		if(declare == 1){
-			fprintf(stderr, "Array declaration at %d contains expression!\n", lineno);
+			fprintf(stderr, "La declaración de matriz en %d contiene una expresión\n", lineno);
 			exit(1);
 		}
 	}
@@ -216,7 +216,7 @@ var_init : ID ASSIGN constant
 array_init: ID array ASSIGN LBRACE values RBRACE
 {
 	if($1->array_size != vc){
-	    fprintf(stderr, "Array init at %d doesn't contain the right amount of values!\n", lineno);
+	    fprintf(stderr, "El array init en %d no contiene la cantidad correcta de valores\n", lineno);
 		exit(1);
 	}
 	$1->vals = vals;
@@ -438,7 +438,7 @@ expression:
 	{
 		/* plus sign error */
 		if($1.ival == ADD){
-			fprintf(stderr, "Error having plus as a sign!\n");
+			fprintf(stderr, "Error con el signo mas\n");
 			exit(1);
 		}
 		else{
@@ -454,7 +454,7 @@ expression:
 					break;
 				case CHAR_TYPE:
 					/* sign before char error */
-					fprintf(stderr, "Error having sign before character constant!\n");
+					fprintf(stderr, "Error al anteponer un signo a una constante de caracteres\n");
 					exit(1);
 					break;
 			}
@@ -639,8 +639,7 @@ return_optional:
 
 void yyerror ()
 {
-  fprintf(stderr, "Syntax error at line %d\n", lineno);
-  exit(1);
+  fprintf(stderr, "Error de sintaxis en la línea %d\n", lineno);
 }
 
 void add_to_names(list_t *entry){
@@ -702,21 +701,14 @@ int main (int argc, char *argv[]){
 	flag = yyparse();
 	fclose(yyin);
 	
-	printf("Parsing finished!\n");
-	
-	if(queue != NULL){
-		printf("Warning: Something has not been checked in the revisit queue!\n");
-	}
+	printf("Análisis finalizado\n");
+	printf("Numero de lineas: %d",lineno);
 	
 	// symbol table dump
 	yyout = fopen("symtab_dump.out", "w");
 	symtab_dump(yyout);
 	fclose(yyout);
 	
-	// revisit queue dump
-	yyout = fopen("revisit_dump.out", "w");
-	revisit_dump(yyout);
-	fclose(yyout);
 	
 	return flag;
 }

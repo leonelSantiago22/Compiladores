@@ -86,7 +86,7 @@ void insert(char *name, int len, int type, int lineno){
 		else{
 			/* same scope - multiple declaration error! */
 			if(l->scope == cur_scope){
-				fprintf(stderr, "A multiple declaration of variable %s at line %d\n", name, lineno);
+				fprintf(stderr, "Declaración múltiple de la variable %s en la línea %d\n", name, lineno);
  				exit(1);
 			}
 			/* other scope - create new entry */
@@ -119,9 +119,9 @@ list_t *lookup(char *name){ /* return symbol if found or NULL if not found */
 
 void symtab_dump(FILE * of){  /* dump file */
   int i;
-  fprintf(of,"------------ -------------- ------ ------------\n");
-  fprintf(of,"Name         Type           Scope  Line Numbers\n");
-  fprintf(of,"------------ -------------- ------ ------------\n");
+  fprintf(of,"------------ -------------- -----------------\n");
+  fprintf(of,"Nombre       Tipo           Numero de Lineas\n");
+  fprintf(of,"------------ -------------- ----------------\n");
   for (i=0; i < SIZE; ++i){ 
 	if (hash_table[i] != NULL){ 
 		list_t *l = hash_table[i];
@@ -133,14 +133,14 @@ void symtab_dump(FILE * of){  /* dump file */
 			else if (l->st_type == CHAR_TYPE)          fprintf(of,"%-15s","char");
 			else if (l->st_type == VOID_TYPE)          fprintf(of,"%-15s","void");
 			else if (l->st_type == ARRAY_TYPE){
-				fprintf(of,"array of ");
+				fprintf(of,"arreglo de ");
 				if (l->inf_type == INT_TYPE) 		   fprintf(of,"%-6s","int");
 				else if (l->inf_type  == REAL_TYPE)    fprintf(of,"%-6s","real");
 				else if (l->inf_type  == CHAR_TYPE)    fprintf(of,"%-6s","char");
 				else fprintf(of,"%-13s","undef");
 			}
 			else if (l->st_type == POINTER_TYPE){
-				fprintf(of,"pointer to ");
+				fprintf(of,"apuntador de ");
 				if (l->inf_type == INT_TYPE) 		   fprintf(of,"%-4s","int");
 				else if (l->inf_type  == REAL_TYPE)    fprintf(of,"%-4s","real");
 				else if (l->inf_type  == CHAR_TYPE)    fprintf(of,"%-4s","char");
@@ -156,7 +156,7 @@ void symtab_dump(FILE * of){  /* dump file */
 				else fprintf(of,"%-4s","undef");
 			}
 			else fprintf(of,"%-15s","undef"); // if UNDEF or 0
-			fprintf(of,"  %d  ",l->scope);
+		
 			while (t != NULL){
 				fprintf(of,"%4d ",t->lineno);
 			t = t->next;
@@ -257,7 +257,7 @@ int func_declare(char *name, int ret_type, int num_of_pars, Param *parameters){ 
 	}
 	/* already declared error */
 	else{
-		fprintf(stderr, "Function %s already declared!\n", name);
+		fprintf(stderr, "¡Función %s ya declarada!\n", name);
 		exit(1);
 	}
 }
@@ -270,7 +270,7 @@ int func_param_check(char *name, int num_of_pars, Param *parameters){ // check p
 	
 	/* check number of parameters */
 	if(l->num_of_pars != num_of_pars){
-		fprintf(stderr, "Function call of %s has wrong num of parameters!\n", name);
+		fprintf(stderr, "La llamada a la función %s tiene un número incorrecto de parámetros\n", name);
 		exit(1);
 	}
 	
@@ -381,13 +381,13 @@ void revisit_dump(FILE *of){
 	revisit_queue *q;
 	q = queue;
 	
-	fprintf(of,"------------ -------------\n");
-	fprintf(of,"Identifier   Revisit Type\n");
-	fprintf(of,"------------ -------------\n");
+	fprintf(of,"-------------- ---------------\n");
+	fprintf(of,"Identificador  Tipo de visita\n");
+	fprintf(of,"-------------- ---------------\n");
   	while(q != NULL){
   		fprintf(of, "%-13s", q->st_name);
   		if(q->revisit_type == PARAM_CHECK){
-  			fprintf(of,"%s","Parameter Check");
+  			fprintf(of,"%s","Comprobación de parámetros");
 		}
 		// more later on
 		fprintf(of, "\n");

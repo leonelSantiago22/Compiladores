@@ -158,10 +158,10 @@ typedef struct AST_Node_While{
 	enum Node_Type type; // node type
 	
 	// condition
-	struct AST_Node *condition;
+ 	struct AST_Node *condition;
 	
-	// branch
-	struct AST_Node *while_branch;
+ 	// branch
+ 	struct AST_Node *while_branch;
 }AST_Node_While;
 
 typedef struct AST_Node_Assign{

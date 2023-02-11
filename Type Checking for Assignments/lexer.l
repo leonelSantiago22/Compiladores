@@ -101,6 +101,6 @@ STRING		\"{print}*\"
 "\n"			{ lineno += 1; }
 [ \t\r\f]+		/* eat up whitespace */
 
-.				{ yyerror("Unrecognized character"); }
+.				{ yyerror("Caracter no reconocido"); }
 
 %%

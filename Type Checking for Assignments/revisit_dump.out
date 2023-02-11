@@ -1,4 +1,5 @@
------------- -------------
-Identifier   Revisit Type
------------- -------------
-print        Parameter Check
+-------------- ---------------
+Identificador  Tipo de visita
+-------------- ---------------
+a            Comprobación de parámetros
+print        Comprobación de parámetros
